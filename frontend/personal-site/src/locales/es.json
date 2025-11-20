@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Izan de la Cruz",
+    "title": "Desarrollador Full Stack Junior",
+    "subtitle": "Graduado en DAM y DAW, apasionado por crear soluciones tecnológicas innovadoras",
+    "cta_projects": "Ver Proyectos",
+    "cta_contact": "Contactar"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "intro": "Soy un desarrollador apasionado por la tecnología y el aprendizaje continuo.",
+    "education_title": "Formación",
+    "education_dam": "Desarrollo de Aplicaciones Multiplataforma (DAM)",
+    "education_daw": "Desarrollo de Aplicaciones Web (DAW)",
+    "experience_title": "Experiencia",
+    "experience_text": "He trabajado con Unity para desarrollar proyectos de juegos y aplicaciones interactivas, además de haber creado aplicaciones web y multiplataforma durante mis estudios.",
+    "interests_title": "Intereses",
+    "interests_text": "Me apasiona el desarrollo de videojuegos, las aplicaciones web modernas, y siempre estoy buscando aprender nuevas tecnologías y frameworks."
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "subtitle": "Aquí están algunos de los proyectos en los que he trabajado",
+    "view_code": "Ver Código",
+    "view_demo": "Ver Demo",
+    "project1_name": "Proyecto Unity",
+    "project1_desc": "Juego/aplicación interactiva desarrollada con Unity Engine",
+    "project1_tech": "Unity, C#, Game Design",
+    "project2_name": "Aplicación Web DAW",
+    "project2_desc": "Aplicación web full-stack desarrollada durante el curso de DAW",
+    "project2_tech": "Vue.js, Node.js, MySQL",
+    "project3_name": "App Móvil DAM",
+    "project3_desc": "Aplicación multiplataforma desarrollada en DAM",
+    "project3_tech": "Java, Android SDK, SQLite"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "subtitle": "Tecnologías y herramientas con las que trabajo",
+    "languages": "Lenguajes de Programación",
+    "frameworks": "Frameworks y Librerías",
+    "tools": "Herramientas y Tecnologías",
+    "databases": "Bases de Datos"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes algún proyecto en mente? ¡Hablemos!",
+    "form_name": "Nombre",
+    "form_email": "Email",
+    "form_message": "Mensaje",
+    "form_submit": "Enviar Mensaje",
+    "social_title": "Encuéntrame en",
+    "form_name_placeholder": "Tu nombre",
+    "form_email_placeholder": "tu@email.com",
+    "form_message_placeholder": "Cuéntame sobre tu proyecto..."
+  }
+}

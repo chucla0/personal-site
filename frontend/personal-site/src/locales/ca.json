@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Inici",
+    "about": "Sobre Mi",
+    "projects": "Projectes",
+    "skills": "Habilitats",
+    "contact": "Contacte",
+    "language": "Idioma"
+  },
+  "hero": {
+    "greeting": "Hola, sóc",
+    "name": "Izan de la Cruz",
+    "title": "Desenvolupador Full Stack Junior",
+    "subtitle": "Graduat en DAM i DAW, apassionat per crear solucions tecnològiques innovadores",
+    "cta_projects": "Veure Projectes",
+    "cta_contact": "Contactar"
+  },
+  "about": {
+    "title": "Sobre Mi",
+    "intro": "Sóc un desenvolupador apassionat per la tecnologia i l'aprenentatge continu.",
+    "education_title": "Formació",
+    "education_dam": "Desenvolupament d'Aplicacions Multiplataforma (DAM)",
+    "education_daw": "Desenvolupament d'Aplicacions Web (DAW)",
+    "experience_title": "Experiència",
+    "experience_text": "He treballat amb Unity per desenvolupar projectes de jocs i aplicacions interactives, a més d'haver creat aplicacions web i multiplataforma durant els meus estudis.",
+    "interests_title": "Interessos",
+    "interests_text": "M'apassiona el desenvolupament de videojocs, les aplicacions web modernes, i sempre estic buscant aprendre noves tecnologies i frameworks."
+  },
+  "projects": {
+    "title": "Els Meus Projectes",
+    "subtitle": "Aquí hi ha alguns dels projectes en els quals he treballat",
+    "view_code": "Veure Codi",
+    "view_demo": "Veure Demo",
+    "project1_name": "Projecte Unity",
+    "project1_desc": "Joc/aplicació interactiva desenvolupada amb Unity Engine",
+    "project1_tech": "Unity, C#, Game Design",
+    "project2_name": "Aplicació Web DAW",
+    "project2_desc": "Aplicació web full-stack desenvolupada durant el curs de DAW",
+    "project2_tech": "Vue.js, Node.js, MySQL",
+    "project3_name": "App Mòbil DAM",
+    "project3_desc": "Aplicació multiplataforma desenvolupada en DAM",
+    "project3_tech": "Java, Android SDK, SQLite"
+  },
+  "skills": {
+    "title": "Habilitats Tècniques",
+    "subtitle": "Tecnologies i eines amb les quals treballo",
+    "languages": "Llenguatges de Programació",
+    "frameworks": "Frameworks i Llibreries",
+    "tools": "Eines i Tecnologies",
+    "databases": "Bases de Dades"
+  },
+  "contact": {
+    "title": "Contacte",
+    "subtitle": "Tens algun projecte en ment? Parlem!",
+    "form_name": "Nom",
+    "form_email": "Email",
+    "form_message": "Missatge",
+    "form_submit": "Enviar Missatge",
+    "social_title": "Troba'm a",
+    "form_name_placeholder": "El teu nom",
+    "form_email_placeholder": "el.teu@email.com",
+    "form_message_placeholder": "Explica'm sobre el teu projecte..."
+  }
+}

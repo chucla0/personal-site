@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Izan de la Cruz",
+    "title": "Junior Full Stack Developer",
+    "subtitle": "Graduate in Cross-platform and Web Application Development, passionate about creating innovative tech solutions",
+    "cta_projects": "View Projects",
+    "cta_contact": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I'm a developer passionate about technology and continuous learning.",
+    "education_title": "Education",
+    "education_dam": "Cross-platform Application Development (DAM)",
+    "education_daw": "Web Application Development (DAW)",
+    "experience_title": "Experience",
+    "experience_text": "I've worked with Unity to develop game projects and interactive applications, and I've also created web and cross-platform applications during my studies.",
+    "interests_title": "Interests",
+    "interests_text": "I'm passionate about game development, modern web applications, and I'm always looking to learn new technologies and frameworks."
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Here are some of the projects I've worked on",
+    "view_code": "View Code",
+    "view_demo": "View Demo",
+    "project1_name": "Unity Project",
+    "project1_desc": "Interactive game/application developed with Unity Engine",
+    "project1_tech": "Unity, C#, Game Design",
+    "project2_name": "DAW Web Application",
+    "project2_desc": "Full-stack web application developed during DAW course",
+    "project2_tech": "Vue.js, Node.js, MySQL",
+    "project3_name": "DAM Mobile App",
+    "project3_desc": "Cross-platform application developed in DAM",
+    "project3_tech": "Java, Android SDK, SQLite"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "Technologies and tools I work with",
+    "languages": "Programming Languages",
+    "frameworks": "Frameworks & Libraries",
+    "tools": "Tools & Technologies",
+    "databases": "Databases"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let's talk!",
+    "form_name": "Name",
+    "form_email": "Email",
+    "form_message": "Message",
+    "form_submit": "Send Message",
+    "social_title": "Find me on",
+    "form_name_placeholder": "Your name",
+    "form_email_placeholder": "your@email.com",
+    "form_message_placeholder": "Tell me about your project..."
+  }
+}

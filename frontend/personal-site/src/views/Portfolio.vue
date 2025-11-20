@@ -1,21 +1,40 @@
 <template>
   <div class="portfolio">
     <div class="container">
-      <h1 class="page-title">Mi Portfolio</h1>
-      <p class="subtitle">Proyectos en los que he trabajado</p>
+      <div class="section-header">
+        <span class="prompt">~$</span>
+        <span class="command">ls -la ./projects/</span>
+      </div>
 
       <div class="projects-grid">
         <div class="project-card" v-for="project in projects" :key="project.id">
-          <div class="project-image">
-            <div class="placeholder">{{ project.icon }}</div>
+          <div class="file-header">
+            <span class="file-type">{{ project.type }}</span>
+            <span class="file-name">{{ $t(project.titleKey) }}</span>
           </div>
-          <div class="project-content">
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.description }}</p>
-            <div class="tags">
-              <span class="tag" v-for="tag in project.tags" :key="tag">{{
-                tag
-              }}</span>
+          <div class="file-content">
+            <div class="code-preview">
+              <span class="comment">// {{ $t(project.descKey) }}</span>
+            </div>
+            <div class="file-meta">
+              <span class="meta-label">stack:</span>
+              <div class="tech-tags">
+                <span
+                  class="tech-tag"
+                  v-for="tag in project.tags.split(', ')"
+                  :key="tag"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+            </div>
+            <div class="file-actions">
+              <a href="#" class="action-link">
+                <Code :size="16" /> {{ $t("projects.view_code") }}
+              </a>
+              <a href="#" class="action-link secondary">
+                <Rocket :size="16" /> {{ $t("projects.view_demo") }}
+              </a>
             </div>
           </div>
         </div>
@@ -26,37 +45,32 @@
 
 <script setup>
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+import { Code, Rocket } from "lucide-vue-next";
+
+const { t } = useI18n();
 
 const projects = ref([
   {
     id: 1,
-    title: "Proyecto E-commerce",
-    description:
-      "Tienda online completa con carrito de compras y pasarela de pago.",
-    tags: ["Vue.js", "Node.js", "MongoDB"],
-    icon: "🛒",
+    type: ".unity",
+    titleKey: "projects.project1_name",
+    descKey: "projects.project1_desc",
+    tags: t("projects.project1_tech"),
   },
   {
     id: 2,
-    title: "Dashboard Analytics",
-    description: "Panel de control con gráficos y estadísticas en tiempo real.",
-    tags: ["React", "D3.js", "Firebase"],
-    icon: "📊",
+    type: ".vue",
+    titleKey: "projects.project2_name",
+    descKey: "projects.project2_desc",
+    tags: t("projects.project2_tech"),
   },
   {
     id: 3,
-    title: "App de Tareas",
-    description:
-      "Aplicación para gestionar tareas diarias con sincronización en la nube.",
-    tags: ["Vue.js", "Vuex", "API REST"],
-    icon: "✅",
-  },
-  {
-    id: 4,
-    title: "Blog Personal",
-    description: "Blog con sistema de comentarios y categorías.",
-    tags: ["Vue.js", "Markdown", "SEO"],
-    icon: "📝",
+    type: ".java",
+    titleKey: "projects.project3_name",
+    descKey: "projects.project3_desc",
+    tags: t("projects.project3_tech"),
   },
 ]);
 </script>
@@ -64,8 +78,8 @@ const projects = ref([
 <style scoped>
 .portfolio {
   min-height: 100vh;
-  padding: 4rem 2rem;
-  background: #f8f9fa;
+  padding: 6rem 2rem;
+  background: var(--bg-primary);
 }
 
 .container {
@@ -73,107 +87,176 @@ const projects = ref([
   margin: 0 auto;
 }
 
-.page-title {
-  font-size: 3rem;
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 1rem;
-  animation: fadeIn 0.8s ease-in;
+.section-header {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  animation: fadeInDown 0.6s ease-out;
 }
 
-.subtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 3rem;
+.prompt {
+  color: var(--accent-cyan);
+  margin-right: 0.5rem;
+}
+
+.command {
+  color: var(--accent-pink);
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  animation: slideUp 1s ease-out;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .project-card {
-  background: white;
-  border-radius: 20px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-hover);
+  box-shadow: 0 8px 30px rgba(var(--accent-hover-rgb), 0.3);
+  transform: translateY(-5px);
 }
 
-.project-image {
-  height: 200px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.file-header {
+  background: var(--bg-tertiary);
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border-color);
+  font-family: "JetBrains Mono", monospace;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+  gap: 0.75rem;
 }
 
-.project-card:hover .project-image {
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+.file-type {
+  color: var(--accent-yellow);
+  font-weight: 700;
+  font-size: 0.85rem;
 }
 
-.placeholder {
-  font-size: 5rem;
-  animation: float 3s ease-in-out infinite;
+.file-name {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
-.project-content {
-  padding: 2rem;
+.file-content {
+  padding: 1.5rem;
+  font-family: "JetBrains Mono", monospace;
 }
 
-.project-content h3 {
-  color: #2c3e50;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.code-preview {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-tertiary);
+  border-left: 3px solid var(--accent-pink);
+  border-radius: 4px;
 }
 
-.project-content p {
-  color: #666;
+.comment {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 0.9rem;
   line-height: 1.6;
+}
+
+.file-meta {
   margin-bottom: 1.5rem;
 }
 
-.tags {
+.meta-label {
+  color: var(--accent-cyan);
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.tech-tags {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
 
-.tag {
-  background: #e8eaf6;
-  color: #667eea;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+.tech-tag {
+  background: var(--bg-tertiary);
+  color: var(--accent-yellow);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 10px rgba(var(--accent-hover-rgb), 0.3);
+}
+
+.file-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.action-link {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--bg-tertiary);
+  color: var(--accent-cyan);
+  text-decoration: none;
+  border: 2px solid var(--accent-cyan);
+  border-radius: 4px;
   font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.tag:hover {
-  background: #667eea;
-  color: white;
+.action-link:hover {
+  background: var(--accent-hover);
+  color: var(--bg-primary);
+  box-shadow: 0 0 15px rgba(var(--accent-hover-rgb), 0.5);
 }
 
-@keyframes fadeIn {
+.action-link.secondary {
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+}
+
+.action-link.secondary:hover {
+  background: var(--accent-pink);
+  box-shadow: 0 0 15px rgba(255, 106, 193, 0.5);
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+@keyframes fadeInDown {
   from {
     opacity: 0;
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes slideUp {
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -184,23 +267,17 @@ const projects = ref([
   }
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
 @media (max-width: 768px) {
-  .page-title {
-    font-size: 2rem;
+  .section-header {
+    font-size: 1.5rem;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .file-actions {
+    flex-direction: column;
   }
 }
 </style>
