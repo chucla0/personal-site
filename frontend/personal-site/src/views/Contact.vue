@@ -63,7 +63,7 @@
                 <input
                   type="text"
                   v-model="formData.name"
-                  placeholder="Your Name"
+                  :placeholder="$t('contact.form_name_placeholder')"
                   required
                 />
               </div>
@@ -77,7 +77,7 @@
                 <input
                   type="email"
                   v-model="formData.email"
-                  placeholder="your@email.com"
+                  :placeholder="$t('contact.form_email_placeholder')"
                   required
                 />
               </div>
@@ -90,7 +90,7 @@
                 </label>
                 <textarea
                   v-model="formData.message"
-                  placeholder="Tell me about your project..."
+                  :placeholder="$t('contact.form_message_placeholder')"
                   rows="5"
                   required
                 ></textarea>
@@ -98,7 +98,7 @@
 
               <button type="submit" class="submit-btn">
                 <span class="btn-prompt">~$</span>
-                <span class="btn-text">Send Message</span>
+                <span class="btn-text">{{ $t("contact.form_submit") }}</span>
               </button>
             </form>
           </div>
