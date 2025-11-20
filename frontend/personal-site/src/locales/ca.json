@@ -57,8 +57,8 @@
     "form_message": "Missatge",
     "form_submit": "Enviar Missatge",
     "social_title": "Troba'm a",
-    "form_name_placeholder": "El teu nom",
-    "form_email_placeholder": "el.teu'@'email.com",
-    "form_message_placeholder": "Explica'm sobre el teu projecte..."
+    "form_name_placeholder": "> El teu nom",
+    "form_email_placeholder": "> El teu email",
+    "form_message_placeholder": "> Explica'm sobre el teu projecte..."
   }
 }
