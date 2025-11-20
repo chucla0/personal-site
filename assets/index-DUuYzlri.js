@@ -155,7 +155,7 @@
     "language": "Language"
   },
   "hero": {
-    "greeting": "Hi, I''m",
+    "greeting": "Hi, I'm",
     "name": "Izan de la Cruz",
     "title": "Junior Full Stack Developer",
     "subtitle": "Graduate in Cross-platform and Web Application Development, passionate about creating innovative tech solutions",
@@ -164,18 +164,18 @@
   },
   "about": {
     "title": "About Me",
-    "intro": "I''m a developer passionate about technology and continuous learning.",
+    "intro": "I'm a developer passionate about technology and continuous learning.",
     "education_title": "Education",
     "education_dam": "Cross-platform Application Development (DAM)",
     "education_daw": "Web Application Development (DAW)",
     "experience_title": "Experience",
-    "experience_text": "I''ve worked with Unity to develop game projects and interactive applications, and I''ve also created web and cross-platform applications during my studies.",
+    "experience_text": "I've worked with Unity to develop game projects and interactive applications, and I've also created web and cross-platform applications during my studies.",
     "interests_title": "Interests",
-    "interests_text": "I''m passionate about game development, modern web applications, and I''m always looking to learn new technologies and frameworks."
+    "interests_text": "I'm passionate about game development, modern web applications, and I'm always looking to learn new technologies and frameworks."
   },
   "projects": {
     "title": "My Projects",
-    "subtitle": "Here are some of the projects I''ve worked on",
+    "subtitle": "Here are some of the projects I've worked on",
     "view_code": "View Code",
     "view_demo": "View Demo",
     "project1_name": "Unity Project",
@@ -198,7 +198,7 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Have a project in mind? Let''s talk!",
+    "subtitle": "Have a project in mind? Let's talk!",
     "form_name": "Name",
     "form_email": "Email",
     "form_message": "Message",
