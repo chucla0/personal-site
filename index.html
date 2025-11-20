@@ -19,11 +19,21 @@
 
     <meta name="twitter:card" content="summary_large_image">
     
+    <script>
+      (function() {
+        const redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    
     <!-- IDE Theme Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/personal-site/assets/index-D1xG_ani.js"></script>
+    <script type="module" crossorigin src="/personal-site/assets/index-DUuYzlri.js"></script>
     <link rel="stylesheet" crossorigin href="/personal-site/assets/index-C8Bss9cR.css">
   </head>
   <body>
