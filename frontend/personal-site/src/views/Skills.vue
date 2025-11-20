@@ -15,14 +15,16 @@
             <span class="bracket">]</span>
           </div>
           <div class="skill-list">
-            <div
-              class="skill-item"
+            <a
               v-for="skill in languages"
               :key="skill.name"
+              :href="skill.link"
+              target="_blank"
+              class="skill-item"
             >
-              <span class="bullet">•</span>
+              <i :class="skill.icon" class="skill-icon"></i>
               <span class="skill-name">{{ skill.name }}</span>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -34,14 +36,16 @@
             <span class="bracket">]</span>
           </div>
           <div class="skill-list">
-            <div
-              class="skill-item"
+            <a
               v-for="skill in frameworks"
               :key="skill.name"
+              :href="skill.link"
+              target="_blank"
+              class="skill-item"
             >
-              <span class="bullet">•</span>
+              <i :class="skill.icon" class="skill-icon"></i>
               <span class="skill-name">{{ skill.name }}</span>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -53,10 +57,16 @@
             <span class="bracket">]</span>
           </div>
           <div class="skill-list">
-            <div class="skill-item" v-for="skill in tools" :key="skill.name">
-              <span class="bullet">•</span>
+            <a
+              v-for="skill in tools"
+              :key="skill.name"
+              :href="skill.link"
+              target="_blank"
+              class="skill-item"
+            >
+              <i :class="skill.icon" class="skill-icon"></i>
               <span class="skill-name">{{ skill.name }}</span>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -68,14 +78,16 @@
             <span class="bracket">]</span>
           </div>
           <div class="skill-list">
-            <div
-              class="skill-item"
+            <a
               v-for="skill in databases"
               :key="skill.name"
+              :href="skill.link"
+              target="_blank"
+              class="skill-item"
             >
-              <span class="bullet">•</span>
+              <i :class="skill.icon" class="skill-icon"></i>
               <span class="skill-name">{{ skill.name }}</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -87,31 +99,40 @@
 import { ref } from "vue";
 
 const languages = ref([
-  { name: "Java" },
-  { name: "C#" },
-  { name: "JavaScript" },
-  { name: "Python" },
-  { name: "HTML/CSS" },
+  { name: "Java", icon: "devicon-java-plain", link: "https://www.java.com/" },
+  { name: "C#", icon: "devicon-csharp-plain", link: "https://docs.microsoft.com/en-us/dotnet/csharp/" },
+  { name: "JavaScript", icon: "devicon-javascript-plain", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { name: "Python", icon: "devicon-python-plain", link: "https://www.python.org/" },
+  { name: "HTML/CSS", icon: "devicon-html5-plain-wordmark", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
 ]);
 
 const frameworks = ref([
-  { name: "Vue.js" },
-  { name: "Node.js" },
-  { name: "Unity" },
-  { name: "Android SDK" },
+  { name: "Vue.js", icon: "devicon-vuejs-plain", link: "https://vuejs.org/" },
+  { name: "Node.js", icon: "devicon-nodejs-plain", link: "https://nodejs.org/" },
+  { name: "Unity", icon: "devicon-unity-original", link: "https://unity.com/" },
+  { name: "Unity WebGL", icon: "devicon-html5-plain", link: "https://unity.com/solutions/webgl" },
+  { name: "Mirror", icon: "devicon-github-original", link: "https://mirror-networking.com/" },
+  { name: "Android SDK", icon: "devicon-android-plain", link: "https://developer.android.com/" },
+  { name: "API REST", icon: "fas fa-cogs", link: "#" },
+  { name: "Microservices", icon: "fas fa-network-wired", link: "#" },
+  { name: "Sequelize", icon: "devicon-sequelize-plain", link: "https://sequelize.org/" },
 ]);
 
 const tools = ref([
-  { name: "Git" },
-  { name: "VS Code" },
-  { name: "IntelliJ IDEA" },
-  { name: "Postman" },
+  { name: "Git", icon: "devicon-git-plain", link: "https://git-scm.com/" },
+  { name: "VS Code", icon: "devicon-visualstudio-plain", link: "https://code.visualstudio.com/" },
+  { name: "Docker", icon: "devicon-docker-plain", link: "https://www.docker.com/" },
+  { name: "ThunderClient", icon: "fas fa-bolt", link: "https://www.thunderclient.com/" },
+  { name: "GitHub Actions", icon: "devicon-github-original", link: "https://github.com/features/actions" },
+  { name: "Adminer", icon: "fas fa-database", link: "https://www.adminer.org/" },
+  { name: "Mongo Express", icon: "devicon-mongodb-plain", link: "https://github.com/mongo-express/mongo-express" },
+  { name: "Steamworks", icon: "fab fa-steam", link: "https://partner.steamgames.com/" },
 ]);
 
 const databases = ref([
-  { name: "MySQL" },
-  { name: "SQLite" },
-  { name: "MongoDB" },
+  { name: "MySQL", icon: "devicon-mysql-plain", link: "https://www.mysql.com/" },
+  { name: "SQLite", icon: "devicon-sqlite-plain", link: "https://www.sqlite.org/index.html" },
+  { name: "MongoDB", icon: "devicon-mongodb-plain", link: "https://www.mongodb.com/" },
 ]);
 </script>
 
@@ -196,6 +217,8 @@ const databases = ref([
   padding: 0.5rem;
   border-radius: 4px;
   transition: all 0.2s ease;
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
 .skill-item:hover {
@@ -203,19 +226,16 @@ const databases = ref([
   padding-left: 1rem;
 }
 
-.bullet {
-  color: var(--accent-pink);
-  font-size: 1.2rem;
+.skill-icon {
+  font-size: 1.5rem;
+  color: var(--accent-cyan);
+  width: 25px;
+  text-align: center;
 }
 
 .skill-name {
-  color: var(--text-primary);
   flex: 1;
   font-size: 0.95rem;
-}
-
-.skill-icon {
-  font-size: 1.3rem;
 }
 
 @keyframes fadeInDown {

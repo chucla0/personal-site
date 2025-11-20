@@ -22,9 +22,9 @@
     "education_dam": "Desarrollo de Aplicaciones Multiplataforma (DAM)",
     "education_daw": "Desarrollo de Aplicaciones Web (DAW)",
     "experience_title": "Experiencia",
-    "experience_text": "He trabajado con Unity para desarrollar proyectos de juegos y aplicaciones interactivas, además de haber creado aplicaciones web y multiplataforma durante mis estudios.",
+    "experience_text": "Mi experiencia abarca el desarrollo de aplicaciones web full-stack, utilizando frameworks como Vue.js en el frontend y Node.js con Sequelize en el backend. He diseñado y consumido APIs REST y tengo conocimientos en la arquitectura de microservicios. Además, he desarrollado videojuegos con Unity, explorando la creación de experiencias multijugador con Mirror y la integración con Steamworks. Mi enfoque se centra en escribir código limpio, escalable y mantenible.",
     "interests_title": "Intereses",
-    "interests_text": "Me apasiona el desarrollo de videojuegos, las aplicaciones web modernas, y siempre estoy buscando aprender nuevas tecnologías y frameworks."
+    "interests_text": "Soy un entusiasta del aprendizaje continuo, siempre explorando nuevas fronteras tecnológicas. Me interesa profundamente la automatización de despliegues (CI/CD) con herramientas como GitHub Actions y la contenedorización de aplicaciones con Docker. Me apasiona tanto la creación de interfaces de usuario interactivas como la construcción de una lógica de servidor robusta, buscando siempre la mejor herramienta para cada desafío."
   },
   "projects": {
     "title": "Mis Proyectos",

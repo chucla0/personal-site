@@ -40,7 +40,7 @@
           <div class="block-content">
             <pre><code><span class="keyword">const</span> <span class="variable">experience</span> = {
   <span class="key">description</span>: <span class="string">"{{ $t('about.experience_text') }}"</span>,
-  <span class="key">technologies</span>: [<span class="string">"Unity"</span>, <span class="string">"C#"</span>, <span class="string">"Vue.js"</span>]
+  <span class="key">technologies</span>: [<span class="string">"Vue.js"</span>, <span class="string">"Node.js"</span>, <span class="string">"Docker"</span>, <span class="string">"Unity"</span>, <span class="string">"MySQL"</span>, <span class="string">"GitHub Actions"</span>]
 };</code></pre>
           </div>
         </div>

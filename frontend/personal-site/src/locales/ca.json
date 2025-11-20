@@ -22,9 +22,9 @@
     "education_dam": "Desenvolupament d'Aplicacions Multiplataforma (DAM)",
     "education_daw": "Desenvolupament d'Aplicacions Web (DAW)",
     "experience_title": "Experiència",
-    "experience_text": "He treballat amb Unity per desenvolupar projectes de jocs i aplicacions interactives, a més d'haver creat aplicacions web i multiplataforma durant els meus estudis.",
+    "experience_text": "La meva experiència abasta el desenvolupament d'aplicacions web full-stack, utilitzant frameworks com Vue.js al frontend i Node.js amb Sequelize al backend. He dissenyat i consumit APIs REST i tinc coneixements en l'arquitectura de microserveis. A més, he desenvolupat videojocs amb Unity, explorant la creació d'experiències multijugador amb Mirror i la integració amb Steamworks. El meu enfocament se centra en escriure codi net, escalable i mantenible.",
     "interests_title": "Interessos",
-    "interests_text": "M'apassiona el desenvolupament de videojocs, les aplicacions web modernes, i sempre estic buscant aprendre noves tecnologies i frameworks."
+    "interests_text": "Sóc un entusiasta de l'aprenentatge continu, sempre explorant noves fronteres tecnològiques. M'interessa profundament l'automatització de desplegaments (CI/CD) amb eines com GitHub Actions i la contenedorització d'aplicacions amb Docker. M'apassiona tant la creació d'interfícies d'usuari interactives com la construcció d'una lògica de servidor robusta, buscant sempre la millor eina per a cada repte."
   },
   "projects": {
     "title": "Els Meus Projectes",

@@ -22,9 +22,9 @@
     "education_dam": "Cross-platform Application Development (DAM)",
     "education_daw": "Web Application Development (DAW)",
     "experience_title": "Experience",
-    "experience_text": "I've worked with Unity to develop game projects and interactive applications, and I've also created web and cross-platform applications during my studies.",
+    "experience_text": "My experience covers the development of full-stack web applications, using frameworks like Vue.js on the frontend and Node.js with Sequelize on the backend. I have designed and consumed REST APIs and have knowledge of microservices architecture. Additionally, I have developed video games with Unity, exploring multiplayer creation with Mirror and integration with Steamworks. My focus is on writing clean, scalable, and maintainable code.",
     "interests_title": "Interests",
-    "interests_text": "I'm passionate about game development, modern web applications, and I'm always looking to learn new technologies and frameworks."
+    "interests_text": "I am an enthusiast of continuous learning, always exploring new technological frontiers. I am deeply interested in deployment automation (CI/CD) with tools like GitHub Actions and application containerization with Docker. I am passionate about both creating interactive user interfaces and building robust server logic, always seeking the best tool for each challenge."
   },
   "projects": {
     "title": "My Projects",
