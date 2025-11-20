@@ -17,8 +17,8 @@
               <span class="link-prompt">$</span>
               <span class="link-command">echo $EMAIL</span>
             </div>
-            <a href="mailto:your@email.com" class="link-output">
-              <Mail :size="18" /> your@email.com
+            <a href="mailto:iizan.cruzz@gmail.com" class="link-output">
+              <Mail :size="18" /> iizan.cruzz@gmail.com
             </a>
 
             <div class="link-line">
@@ -26,11 +26,11 @@
               <span class="link-command">echo $LINKEDIN</span>
             </div>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://linkedin.com/in/iizancruzz"
               class="link-output"
               target="_blank"
             >
-              <Linkedin :size="18" /> /in/yourprofile
+              <Linkedin :size="18" /> /in/iizancruzz
             </a>
 
             <div class="link-line">
@@ -62,6 +62,7 @@
                 </label>
                 <input
                   type="text"
+                  name="name"
                   v-model="formData.name"
                   :placeholder="$t('contact.form_name_placeholder')"
                   required
@@ -76,6 +77,7 @@
                 </label>
                 <input
                   type="email"
+                  name="_replyto"
                   v-model="formData.email"
                   :placeholder="$t('contact.form_email_placeholder')"
                   required
@@ -89,6 +91,7 @@
                   <span class="equals">=</span>
                 </label>
                 <textarea
+                  name="message"
                   v-model="formData.message"
                   :placeholder="$t('contact.form_message_placeholder')"
                   rows="5"
@@ -96,10 +99,14 @@
                 ></textarea>
               </div>
 
-              <button type="submit" class="submit-btn">
+              <button type="submit" class="submit-btn" :disabled="submitting">
                 <span class="btn-prompt">~$</span>
                 <span class="btn-text">{{ $t("contact.form_submit") }}</span>
               </button>
+
+              <p v-if="status" :class="{ 'text-green-500': status.includes('éxito'), 'text-red-500': status.includes('problema') }">
+                {{ status }}
+              </p>
             </form>
           </div>
         </div>
@@ -118,14 +125,47 @@ const formData = ref({
   message: "",
 });
 
-const handleSubmit = () => {
-  alert(`Message sent! (This is a demo - implement your backend)`);
-  console.log("Form data:", formData.value);
-  formData.value = {
-    name: "",
-    email: "",
-    message: "",
-  };
+const status = ref("");
+const submitting = ref(false);
+const formspreeEndpoint = "https://formspree.io/f/xwpyapqy"; // User-provided endpoint
+
+const handleSubmit = async () => {
+  submitting.value = true;
+  status.value = ""; // Clear previous status
+
+  const data = new FormData();
+  data.append("name", formData.value.name);
+  data.append("_replyto", formData.value.email); // For Formspree to use as reply-to
+  data.append("message", formData.value.message);
+
+  try {
+    const response = await fetch(formspreeEndpoint, {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      status.value = "¡Mensaje enviado con éxito! Te responderé pronto.";
+      formData.value = {
+        name: "",
+        email: "",
+        message: "",
+      };
+    } else {
+      const result = await response.json();
+      status.value = result.errors
+        ? result.errors.map((error) => error.message).join(", ")
+        : "¡Ups! Hubo un problema al enviar tu mensaje.";
+    }
+  } catch (error) {
+    console.error("Submission error:", error);
+    status.value = "Ocurrió un error. Por favor, inténtalo de nuevo más tarde.";
+  } finally {
+    submitting.value = false;
+  }
 };
 </script>
 
