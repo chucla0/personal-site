@@ -77,7 +77,7 @@
     "form_submit": "Enviar Mensaje",
     "social_title": "Encuéntrame en",
     "form_name_placeholder": "Tu nombre",
-    "form_email_placeholder": "tu'@'email.com",
+    "form_email_placeholder": "tu\\\\u0040email.com",
     "form_message_placeholder": "Cuéntame sobre tu proyecto..."
   }
 }
@@ -141,7 +141,7 @@
     "form_submit": "Enviar Missatge",
     "social_title": "Troba'm a",
     "form_name_placeholder": "El teu nom",
-    "form_email_placeholder": "el.teu'@'email.com",
+    "form_email_placeholder": "el.teu\\\\u0040email.com",
     "form_message_placeholder": "Explica'm sobre el teu projecte..."
   }
 }
@@ -205,7 +205,7 @@
     "form_submit": "Send Message",
     "social_title": "Find me on",
     "form_name_placeholder": "Your name",
-    "form_email_placeholder": "your'@'email.com",
+    "form_email_placeholder": "your\\\\u0040email.com",
     "form_message_placeholder": "Tell me about your project..."
   }
 }
