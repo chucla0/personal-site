@@ -39,7 +39,10 @@
     "project2_tech": "Vue.js, Node.js, MySQL",
     "project3_name": "DAM Mobile App",
     "project3_desc": "Cross-platform application developed in DAM",
-    "project3_tech": "Java, Android SDK, SQLite"
+    "project3_tech": "Java, Android SDK, SQLite",
+    "project4_name": "Typing Game",
+    "project4_desc": "Typing game made with Vue, Node.js using router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL, and Mongo, plus Nginx for reverse proxy. It's a DAW class project.",
+    "project4_tech": "Vue.js, Node.js, Pinia, Socket.io, Sequelize, Docker, GitHub Actions, SQL, MongoDB, Nginx"
   },
   "skills": {
     "title": "Technical Skills",

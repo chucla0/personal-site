@@ -29,10 +29,10 @@
               </div>
             </div>
             <div class="file-actions">
-              <a href="#" class="action-link">
+              <a :href="project.codeLink" target="_blank" class="action-link">
                 <Code :size="16" /> {{ $t("projects.view_code") }}
               </a>
-              <a href="#" class="action-link secondary">
+              <a :href="project.demoLink" target="_blank" class="action-link secondary">
                 <Rocket :size="16" /> {{ $t("projects.view_demo") }}
               </a>
             </div>
@@ -53,24 +53,12 @@ const { t } = useI18n();
 const projects = ref([
   {
     id: 1,
-    type: ".unity",
-    titleKey: "projects.project1_name",
-    descKey: "projects.project1_desc",
-    tags: t("projects.project1_tech"),
-  },
-  {
-    id: 2,
     type: ".vue",
-    titleKey: "projects.project2_name",
-    descKey: "projects.project2_desc",
-    tags: t("projects.project2_tech"),
-  },
-  {
-    id: 3,
-    type: ".java",
-    titleKey: "projects.project3_name",
-    descKey: "projects.project3_desc",
-    tags: t("projects.project3_tech"),
+    titleKey: "projects.project4_name",
+    descKey: "projects.project4_desc",
+    tags: t("projects.project4_tech"),
+    demoLink: "http://productiongr3.daw.inspedralbes.cat/",
+    codeLink: "https://github.com/inspedralbes/tr1-type-racer-royale-grup3daw",
   },
 ]);
 </script>

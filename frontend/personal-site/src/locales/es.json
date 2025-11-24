@@ -39,7 +39,10 @@
     "project2_tech": "Vue.js, Node.js, MySQL",
     "project3_name": "App Móvil DAM",
     "project3_desc": "Aplicación multiplataforma desarrollada en DAM",
-    "project3_tech": "Java, Android SDK, SQLite"
+    "project3_tech": "Java, Android SDK, SQLite",
+    "project4_name": "Juego de Mecanografía",
+    "project4_desc": "Juego de mecanografía hecho con Vue, Node.js usando router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL y Mongo, además de Nginx para proxy inverso. Es un proyecto de clase de DAW.",
+    "project4_tech": "Vue.js, Node.js, Pinia, Socket.io, Sequelize, Docker, GitHub Actions, SQL, MongoDB, Nginx"
   },
   "skills": {
     "title": "Habilidades Técnicas",
