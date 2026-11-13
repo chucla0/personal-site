@@ -9,9 +9,17 @@ const messages = {
   en: enMessages
 }
 
+// Restore the visitor's last language (saved by App.vue); default to Spanish
+let savedLocale = null
+try {
+  savedLocale = localStorage.getItem('lang')
+} catch {
+  // storage blocked (private mode): fall back to the default
+}
+
 const i18n = createI18n({
   legacy: false,
-  locale: 'es', // default language
+  locale: messages[savedLocale] ? savedLocale : 'es',
   fallbackLocale: 'en',
   messages
 })

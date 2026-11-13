@@ -21,7 +21,7 @@
               <div class="tech-tags">
                 <span
                   class="tech-tag"
-                  v-for="tag in project.tags.split(', ')"
+                  v-for="tag in $t(project.tagsKey).split(', ')"
                   :key="tag"
                 >
                   {{ tag }}
@@ -45,10 +45,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { useI18n } from "vue-i18n";
 import { Code, Rocket } from "lucide-vue-next";
-
-const { t } = useI18n();
 
 const projects = ref([
   {
@@ -56,7 +53,7 @@ const projects = ref([
     type: ".vue",
     titleKey: "projects.project4_name",
     descKey: "projects.project4_desc",
-    tags: t("projects.project4_tech"),
+    tagsKey: "projects.project4_tech",
     demoLink: "http://productiongr3.daw.inspedralbes.cat/",
     codeLink: "https://github.com/inspedralbes/tr1-type-racer-royale-grup3daw",
   },

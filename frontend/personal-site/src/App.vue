@@ -1,8 +1,23 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
-const { locale } = useI18n();
+const { locale, t } = useI18n();
+
+// Remember the language and keep <html lang> and the tab title in sync with it
+watch(
+  locale,
+  (lang) => {
+    try {
+      localStorage.setItem("lang", lang);
+    } catch {
+      // storage blocked: the choice just won't persist
+    }
+    document.documentElement.lang = lang;
+    document.title = t("meta.title");
+  },
+  { immediate: true }
+);
 const mobileMenuOpen = ref(false);
 const languageMenuOpen = ref(false);
 const isDark = ref(true);
@@ -71,17 +86,22 @@ const cycleLanguage = () => {
         </router-link>
 
         <div class="mobile-controls">
-          <button class="theme-toggle" @click="toggleTheme">
-            <span v-if="isDark" class="theme-icon">☀️</span>
-            <span v-else class="theme-icon">🌙</span>
+          <button class="theme-toggle" @click="toggleTheme" :aria-label="$t('a11y.toggle_theme')">
+            <span v-if="isDark" class="theme-icon" aria-hidden="true">☀️</span>
+            <span v-else class="theme-icon" aria-hidden="true">🌙</span>
           </button>
           <div class="language-selector">
-            <button class="language-btn" @click="cycleLanguage">
-              <span class="lang-icon">&gt;_</span> {{ languages[locale] }}
+            <button class="language-btn" @click="cycleLanguage" :aria-label="$t('a11y.change_language')">
+              <span class="lang-icon" aria-hidden="true">&gt;_</span> {{ languages[locale] }}
             </button>
           </div>
-          <button class="mobile-menu-btn" @click="toggleMobileMenu">
-            <span class="terminal-icon">|||</span>
+          <button
+            class="mobile-menu-btn"
+            @click="toggleMobileMenu"
+            :aria-label="$t('a11y.menu')"
+            :aria-expanded="mobileMenuOpen"
+          >
+            <span class="terminal-icon" aria-hidden="true">|||</span>
           </button>
         </div>
 
@@ -103,13 +123,18 @@ const cycleLanguage = () => {
           </router-link>
 
           <div class="desktop-controls">
-            <button class="theme-toggle" @click="toggleTheme">
-              <span v-if="isDark" class="theme-icon">☀️</span>
-              <span v-else class="theme-icon">🌙</span>
+            <button class="theme-toggle" @click="toggleTheme" :aria-label="$t('a11y.toggle_theme')">
+              <span v-if="isDark" class="theme-icon" aria-hidden="true">☀️</span>
+              <span v-else class="theme-icon" aria-hidden="true">🌙</span>
             </button>
 
             <div class="language-selector">
-              <button class="language-btn" @click="toggleLanguageMenu">
+              <button
+                class="language-btn"
+                @click="toggleLanguageMenu"
+                :aria-label="$t('a11y.change_language')"
+                :aria-expanded="languageMenuOpen"
+              >
                 <span class="lang-icon">&gt;_</span> {{ languages[locale] }}
               </button>
               <div
