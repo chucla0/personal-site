@@ -1,66 +1,50 @@
 {
   "nav": {
-    "home": "Home",
-    "about": "About",
     "projects": "Projects",
-    "skills": "Skills",
-    "contact": "Contact",
-    "language": "Language"
+    "about": "About",
+    "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hi, I'm",
-    "name": "Izan de la Cruz",
-    "title": "Junior Full Stack Developer",
-    "subtitle": "Graduate in Cross-platform and Web Application Development, passionate about creating innovative tech solutions",
-    "cta_projects": "View Projects",
-    "cta_contact": "Contact Me"
+    "intro": "De la Cruz. Junior full stack developer, graduate in cross-platform and web development."
   },
   "about": {
-    "title": "About Me",
-    "intro": "I'm a developer passionate about technology and continuous learning.",
-    "education_title": "Education",
-    "education_dam": "Cross-platform Application Development (DAM)",
-    "education_daw": "Web Application Development (DAW)",
-    "experience_title": "Experience",
-    "experience_text": "My experience covers the development of full-stack web applications, using frameworks like Vue.js on the frontend and Node.js with Sequelize on the backend. I have designed and consumed REST APIs and have knowledge of microservices architecture. Additionally, I have developed video games with Unity, exploring multiplayer creation with Mirror and integration with Steamworks. My focus is on writing clean, scalable, and maintainable code.",
-    "interests_title": "Interests",
-    "interests_text": "I am an enthusiast of continuous learning, always exploring new technological frontiers. I am deeply interested in deployment automation (CI/CD) with tools like GitHub Actions and application containerization with Docker. I am passionate about both creating interactive user interfaces and building robust server logic, always seeking the best tool for each challenge."
+    "title": "About me",
+    "text": "I enjoy the interface as much as the logic that holds it up.",
+    "skills": "I work with Vue, React and Node.js, with MySQL, PostgreSQL and MongoDB. I use Docker and GitHub Actions to deploy, and I have made games with Unity."
   },
   "projects": {
-    "title": "My Projects",
-    "subtitle": "Here are some of the projects I've worked on",
-    "view_code": "View Code",
-    "view_demo": "View Demo",
+    "view_code": "Read the code",
+    "view_demo": "Open the site",
     "casulab_name": "Grupo Casulab",
     "casulab_desc": "Corporate website for a scientific equipment company in Terrassa, built as a team with a colleague during my internship.",
     "synapse_name": "Synapse",
     "synapse_desc": "Collaborative agenda with several calendar types (work, education, personal and shared), roles and approval workflows, plus real-time notifications. Personal project in development: use test data only. The first load can take up to a minute.",
     "optica_name": "Óptica Santa Isabel",
-    "optica_desc": "Website for an optician in Zaragoza, with a minimalist design, interactive animations, appointment requests and an email contact form.",
-    "typing_name": "Typing Game",
-    "typing_desc": "Typing game made with Vue, Node.js using router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL, and Mongo, plus Nginx for reverse proxy. It's a DAW class project."
-  },
-  "skills": {
-    "title": "Technical Skills",
-    "subtitle": "Technologies and tools I work with",
-    "languages": "Programming Languages",
-    "frameworks": "Frameworks & Libraries",
-    "tools": "Tools & Technologies",
-    "databases": "Databases"
+    "optica_desc": "Website for an optician in Zaragoza, with a minimalist design, interactive animations, appointment requests and an email contact form."
   },
   "contact": {
+    "word": "write",
     "title": "Contact",
-    "subtitle": "Have a project in mind? Let's talk!",
+    "form_open": "Send a message",
+    "close": "Close",
+    "sending": "Sending…",
     "form_name": "Name",
     "form_email": "Email",
     "form_message": "Message",
     "form_submit": "Send Message",
-    "social_title": "Find me on",
-    "form_name_placeholder": "> Your name",
-    "form_email_placeholder": "> Your email",
-    "form_message_placeholder": "> Tell me about your project...",
     "status_success": "Message sent successfully! I will reply soon.",
     "status_error": "The message could not be sent. Check your details or email me directly."
+  },
+  "controls": {
+    "night": "Night",
+    "day": "Day",
+    "pause": "Pause",
+    "move": "Move"
+  },
+  "not_found": {
+    "title": "Page not found",
+    "message": "This page does not exist or has moved.",
+    "back_home": "Back to home"
   },
   "meta": {
     "title": "Izan de la Cruz {'|'} Junior Full Stack Developer"
@@ -68,11 +52,8 @@
   "a11y": {
     "toggle_theme": "Toggle light/dark theme",
     "change_language": "Change language",
-    "menu": "Open menu"
-  },
-  "not_found": {
-    "title": "Page not found",
-    "message": "This page does not exist or has moved.",
-    "back_home": "Back to home"
+    "menu": "Sections",
+    "motion_off": "Pause animations",
+    "motion_on": "Turn animations on"
   }
 }

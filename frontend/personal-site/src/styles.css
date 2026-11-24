@@ -1,0 +1,44 @@
+/* Page, then one water colour (w), text (k) and highlight (h) per project */
+:root {
+  --paper: #fff6ec; --ink: #2e1a10;
+  --w1: #ff7a2f; --k1: #2b0f00; --h1: #fff3e6;
+  --w2: #9cc0ff; --k2: #0d2350; --h2: #ffffff;
+  --w3: #93dfc3; --k3: #06332b; --h3: #ffffff;
+  --wm: #ffd873;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --paper: #17110e; --ink: #ffeedd;
+  --w1: #b3470a; --k1: #fff0e4; --h1: #ffb27d;
+  --w2: #23427f; --k2: #dde9ff; --h2: #9cc0ff;
+  --w3: #15604f; --k3: #d6fff2; --h3: #93dfc3;
+  --wm: #a8832a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; margin: 0; }
+body {
+  font: 500 clamp(17px, 1.35vw, 22px)/1.5 Figtree, system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+.big { font-family: "Bagel Fat One", system-ui, sans-serif; font-weight: 400; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 0.09em; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+.pill { padding: 9px 16px; border-radius: 99px; background: var(--ink); color: var(--paper); font-weight: 700; font-size: 16px; line-height: 1.3; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 28px; font-weight: 700; }
+.links a, .links .link { padding: 10px 0; font-weight: 700; text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 0.09em; }
+.links a:hover, .links .link:hover { text-decoration-thickness: 0.22em; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Day and night: the new theme opens from its button */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-new(root) { animation: open 0.75s cubic-bezier(0.7, 0, 0.2, 1); }
+@keyframes open {
+  from { clip-path: circle(0 at var(--tx) var(--ty)); }
+  to { clip-path: circle(150vmax at var(--tx) var(--ty)); }
+}
+@media (max-width: 760px) { .pill { padding: 8px 11px; font-size: 15px; } }

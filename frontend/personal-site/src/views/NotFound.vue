@@ -1,73 +1,14 @@
 <template>
-  <div class="not-found">
-    <div class="container">
-      <h1 class="sr-only">{{ $t("not_found.title") }}</h1>
-      <div class="section-header" aria-hidden="true">
-        <span class="prompt">~$</span>
-        <span class="command">cd {{ $route.path }}</span>
-      </div>
-      <p class="message">{{ $t("not_found.message") }}</p>
-      <router-link to="/" class="home-link">
-        <span aria-hidden="true">cd ~</span> {{ $t("not_found.back_home") }}
-      </router-link>
-    </div>
-  </div>
+  <main class="not-found">
+    <h1 class="big">{{ $t('not_found.title') }}</h1>
+    <p>{{ $t('not_found.message') }}</p>
+    <router-link to="/" class="pill">{{ $t('not_found.back_home') }}</router-link>
+  </main>
 </template>
 
 <style scoped>
-.not-found {
-  min-height: 100vh;
-  padding: 6rem 2rem;
-  background: var(--bg-primary);
-  font-family: "JetBrains Mono", monospace;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-header {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  overflow-wrap: anywhere;
-}
-
-.prompt {
-  color: var(--accent-cyan);
-  margin-right: 0.5rem;
-}
-
-.command {
-  color: var(--accent-pink);
-}
-
-.message {
-  color: var(--text-primary);
-  line-height: 1.7;
-  margin-bottom: 2rem;
-}
-
-.home-link {
-  display: inline-block;
-  background: var(--bg-tertiary);
-  color: var(--accent-cyan);
-  border: 2px solid var(--accent-cyan);
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.home-link:hover {
-  background: var(--accent-hover);
-  color: var(--bg-primary);
-}
-
-@media (max-width: 768px) {
-  .section-header {
-    font-size: 1.5rem;
-  }
-}
+.not-found { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 22px; padding: 24px clamp(18px, 5vw, 80px); background: var(--w2); color: var(--k2); }
+.big { font-size: clamp(46px, 9vw, 150px); white-space: normal; }
+.pill { text-decoration: none; background: var(--k2); color: var(--w2); }
+:focus-visible { outline-color: var(--k2); }
 </style>
