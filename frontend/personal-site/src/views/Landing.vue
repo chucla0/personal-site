@@ -1,16 +1,18 @@
 <template>
   <div ref="root" class="landing">
+    <router-link to="/resumen" class="skip pill">{{ $t('a11y.skip') }}</router-link>
     <header class="bar">
       <a href="#home" @click.prevent="go('home')">Izan de la Cruz</a>
       <nav :aria-label="$t('a11y.menu')">
         <a href="#projects" @click.prevent="go('projects')">{{ $t('nav.projects') }}</a>
         <a href="#about" @click.prevent="go('about')">{{ $t('nav.about') }}</a>
         <a href="#contact" @click.prevent="go('contact')">{{ $t('nav.contact') }}</a>
+        <router-link to="/resumen">{{ $t('nav.overview') }}</router-link>
       </nav>
       <div class="controls">
         <button class="pill" :aria-label="$t('a11y.change_language')" @click="nextLanguage">{{ locale.toUpperCase() }}</button>
         <button class="pill" :aria-label="$t(still ? 'a11y.motion_on' : 'a11y.motion_off')" @click="toggleMotion">{{ $t(still ? 'controls.move' : 'controls.pause') }}</button>
-        <button ref="themeButton" class="pill" :aria-label="$t('a11y.toggle_theme')" @click="toggleTheme">{{ $t(dark ? 'controls.day' : 'controls.night') }}</button>
+        <button class="pill" :aria-label="$t('a11y.toggle_theme')" @click="toggleTheme">{{ $t(dark ? 'controls.day' : 'controls.night') }}</button>
       </div>
     </header>
 
@@ -44,11 +46,15 @@
 
       <article v-for="(p, i) in projects" :key="p.key" class="ly" :data-scene="p.key" :style="`--w:var(--w${i + 1});--k:var(--k${i + 1});--hi:var(--h${i + 1});z-index:${i + 2}`">
         <div class="in">
-          <div class="sc"></div>
+          <div class="sc">
+            <div class="art"></div>
+            <img class="shot" :src="`/shots/${p.shots[0]}.webp`" width="1280" height="800" decoding="async" :alt="$t('projects.shot_alt', { name: $t(`projects.${p.key}_name`) })" />
+          </div>
           <div class="tx">
             <p>{{ $t(`projects.${p.key}_desc`) }}</p>
             <p>{{ p.tech }}</p>
             <div class="links">
+              <router-link :to="`/${p.key}`">{{ $t('projects.view_more') }}</router-link>
               <a v-if="p.demo" :href="p.demo" target="_blank" rel="noopener">{{ $t('projects.view_demo') }}</a>
               <a v-if="p.code" :href="p.code" target="_blank" rel="noopener">{{ $t('projects.view_code') }}</a>
             </div>
@@ -70,58 +76,22 @@ import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import ContactDialog from '@/components/ContactDialog.vue'
 import { createLanding } from '@/landing/engine'
+import { usePrefs } from '@/prefs'
+import { projects } from '@/projects'
 
-const projects = [
-  { key: 'casulab', word: 'casulab', tech: 'Vue.js', demo: 'https://casulab.com/' },
-  { key: 'synapse', word: 'synapse', tech: 'React, Node.js, Prisma, PostgreSQL, Socket.io', demo: 'https://synapse-eight-brown.vercel.app/', code: 'https://github.com/chucla0/Synapse' },
-  { key: 'optica', word: 'óptica', tech: 'Next.js, TypeScript, Tailwind CSS, Framer Motion', demo: 'https://optica-santa-isabel.vercel.app/', code: 'https://github.com/chucla0/optica-santa-isabel' },
-  { key: 'codex', word: 'codex', tech: 'React, Laravel, Socket.io, WebRTC, Redis, Docker', code: 'https://github.com/chucla0/projecte-final-2025-26-daw-codex_trfinal_grup4' }
-]
-
-const { locale, t, availableLocales } = useI18n()
+const { t } = useI18n()
+const { locale, dark, still, nextLanguage, toggleMotion, toggleTheme } = usePrefs()
 const route = useRoute()
 const root = ref(null)
 const dialog = ref(null)
-const themeButton = ref(null)
 let landing = null
-
-const store = (key, value) => { try { localStorage.setItem(key, value) } catch { /* storage blocked */ } }
-const read = (key) => { try { return localStorage.getItem(key) } catch { return null } }
 
 // The last word always has an "i" for the dot to land on
 const word = computed(() => t('contact.word'))
 const iIndex = computed(() => word.value.indexOf('i'))
 
-const nextLanguage = () => {
-  const order = ['es', 'ca', 'en'].filter((l) => availableLocales.includes(l))
-  locale.value = order[(order.indexOf(locale.value) + 1) % order.length]
-}
 watch(locale, () => nextTick(() => landing?.refresh()))
-
-// Follows the system preference until the visitor chooses
-const saved = read('motion')
-const still = ref(saved ? saved === 'off' : matchMedia('(prefers-reduced-motion: reduce)').matches)
-const toggleMotion = () => {
-  still.value = !still.value
-  store('motion', still.value ? 'off' : 'on')
-}
 watch(still, (v) => landing?.setStill(v))
-
-const html = document.documentElement
-const dark = ref(html.dataset.theme === 'dark')
-const toggleTheme = () => {
-  const apply = () => {
-    dark.value = !dark.value
-    html.dataset.theme = dark.value ? 'dark' : 'light'
-    store('theme', html.dataset.theme)
-    return nextTick()
-  }
-  if (!document.startViewTransition || still.value) return apply()
-  const r = themeButton.value.getBoundingClientRect()
-  html.style.setProperty('--tx', `${r.left + r.width / 2}px`)
-  html.style.setProperty('--ty', `${r.top + r.height / 2}px`)
-  document.startViewTransition(apply)
-}
 
 const go = (name) => landing?.goTo(name)
 const follow = (instant) => {
@@ -135,7 +105,10 @@ onMounted(() => {
   follow(true)
 })
 watch(() => route.hash, () => landing && follow(false))
-onBeforeUnmount(() => landing?.destroy())
+onBeforeUnmount(() => {
+  landing?.destroy()
+  landing = null
+})
 </script>
 
 <style scoped>
@@ -158,11 +131,16 @@ onBeforeUnmount(() => landing?.destroy())
 
 /* The drawing takes whatever room the words leave */
 .in { display: grid; grid-template: minmax(0, 1fr) auto / min(38vw, 38ch) minmax(0, 1fr); gap: 2vh 8vw; padding: max(10vh, 82px) clamp(18px, 3.2vw, 52px) 8vh; }
-.ly h2 { grid-area: 2 / 1 / auto / -1; justify-self: start; font-size: 40vh; }
+.ly h2 { grid-area: 2 / 1 / auto / -1; justify-self: start; font-size: 33vh; }
 .tx { grid-area: 1 / 1; padding-top: 3vh; }
 .tx p { margin-bottom: 0.7em; }
 .sc { grid-area: 1 / 2; min-height: 0; }
-.sc :deep(svg) { width: 100%; height: 100%; overflow: visible; }
+.sc { position: relative; }
+.art { position: absolute; inset: 0; }
+.art :deep(svg) { width: 100%; height: 100%; overflow: visible; }
+.shot { position: absolute; inset: 0; margin: auto 0 auto auto; width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: clamp(8px, 1.1vw, 20px); opacity: 0; will-change: transform, opacity; }
+.skip { position: fixed; left: 16px; top: -80px; z-index: 40; }
+.skip:focus { top: 10px; }
 
 .hero h1 { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); font-size: 62vh; }
 .hero p { position: absolute; left: clamp(18px, 3.2vw, 52px); bottom: 6vh; max-width: 32ch; }
@@ -176,10 +154,11 @@ onBeforeUnmount(() => landing?.destroy())
 
 @media (max-width: 760px) and (orientation: portrait) {
   .bar { flex-wrap: wrap; gap: 0 8px; padding: 10px 18px; }
-  .bar nav { order: 3; width: 100%; gap: 22px; }
+  .bar nav { order: 3; width: 100%; gap: clamp(10px, 4vw, 20px); font-size: clamp(15px, 4.3vw, 17px); white-space: nowrap; }
   .controls { gap: 5px; }
   .in { grid-template: minmax(0, 1fr) auto auto / minmax(0, 1fr); padding: 100px 18px 3vh; }
   .sc { grid-area: 1 / 1; }
+  .shot { margin: auto; }
   .tx { grid-area: 2 / 1; padding: 0; font-size: 16px; line-height: 1.42; }
   .ly h2 { grid-area: 3 / 1; }
   .hero h1 { top: 44%; }
@@ -190,8 +169,9 @@ onBeforeUnmount(() => landing?.destroy())
 }
 /* Phones held sideways */
 @media (max-height: 480px) and (orientation: landscape) {
-  .bar { gap: 20px; padding: 8px 24px; }
-  .bar nav { gap: 20px; }
+  .bar { gap: 14px; padding: 8px 24px; font-size: 14px; white-space: nowrap; }
+  .bar .pill { padding: 6px 10px; font-size: 13px; }
+  .bar nav { gap: 14px; }
   .hero h1 { top: 48%; font-size: 54vh; }
   .end h2 { font-size: 50vh; }
   .in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1vh 5vw; padding: 60px 24px 2vh; font-size: 14px; line-height: 1.35; }

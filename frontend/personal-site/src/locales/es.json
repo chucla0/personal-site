@@ -2,10 +2,12 @@
   "nav": {
     "projects": "Proyectos",
     "about": "Sobre mí",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "overview": "Resumen"
   },
   "hero": {
-    "intro": "De la Cruz. Desarrollador full stack junior, graduado en DAM y DAW."
+    "intro": "De la Cruz. Desarrollador full stack junior, graduado en DAM y DAW.",
+    "role": "Desarrollador full stack junior, graduado en DAM y DAW."
   },
   "about": {
     "title": "Sobre mí",
@@ -23,11 +25,33 @@
     "casulab_name": "Grupo Casulab",
     "casulab_desc": "Web corporativa para una empresa de equipamiento científico de Terrassa, desarrollada en equipo con un compañero durante mis prácticas.",
     "synapse_name": "Synapse",
-    "synapse_desc": "Agenda colaborativa con varios tipos de calendario (trabajo, educación, personal y compartido), roles y flujos de aprobación, con notificaciones en tiempo real. Proyecto personal en desarrollo: usa solo datos de prueba. La primera carga puede tardar hasta un minuto.",
+    "synapse_desc": "Agenda colaborativa con calendarios de trabajo, educación, personales y compartidos, y avisos en tiempo real.",
     "optica_name": "Óptica Santa Isabel",
     "optica_desc": "Sitio web para una óptica de Zaragoza, con diseño minimalista, animaciones interactivas, solicitud de cita previa y formulario de contacto por correo.",
     "codex_name": "Codex",
-    "codex_desc": "Red social para estudiantes, con publicaciones, mensajes en tiempo real, videollamadas y espacios por centro. Mi proyecto final de DAW, hecho en un equipo de cuatro."
+    "codex_desc": "Red social para estudiantes, con publicaciones, mensajes en tiempo real, videollamadas y espacios por centro. Mi proyecto final de DAW, hecho en un equipo de cuatro.",
+    "casulab_problem": "La web corporativa de una empresa de equipamiento científico de Terrassa. Reúne sus tres divisiones, Enterlab, Rephile y Casulab, con sus servicios y formas de contacto.",
+    "casulab_did": "La desarrollé en equipo con un compañero durante mis prácticas.",
+    "synapse_problem": "Un calendario normal trata igual un examen que una cena. Synapse separa agendas de trabajo, educación, personales y compartidas, y cada una tiene sus reglas: en las de trabajo, por ejemplo, los eventos pueden necesitar aprobación.",
+    "synapse_did": "Es un proyecto en solitario: la interfaz en React, la API con Express y Prisma, la base de datos PostgreSQL y el despliegue en Vercel, Render y Neon.",
+    "synapse_hard": "Importar un Google Calendar entero tardaba tanto que el servidor respondía con un error 502. Pasé la importación a segundo plano y añadí el progreso en pantalla.",
+    "synapse_state": "En línea y en desarrollo. Es una demo: usa solo datos de prueba, y la primera carga puede tardar hasta un minuto.",
+    "optica_problem": "La web de una óptica de Zaragoza abierta desde 1985. Enseña sus servicios y colecciones y permite pedir cita.",
+    "optica_did": "La web completa: interfaz con Next.js y TypeScript, animaciones con Framer Motion y Rive, y el formulario de citas.",
+    "optica_hard": "Enviar las citas por correo sin un servicio externo. Una ruta de servidor de Next.js habla con el correo por SMTP, así que las claves nunca llegan al navegador.",
+    "codex_problem": "Una red social para estudiantes: publicar dudas con código, seguir a gente, hablar en tiempo real y tener un espacio privado para cada centro. Fue mi proyecto final de DAW.",
+    "codex_did": "En un equipo de cuatro, hice la mayor parte de la API en Laravel (publicaciones, acceso con Google, búsqueda, centros y notificaciones) y el despliegue con Docker y GitHub Actions. También trabajé en la interfaz.",
+    "codex_hard": "Que las notificaciones lleguen al momento. La API en Laravel las publica en Redis y un servidor de Socket.io, aparte, las reparte a cada usuario conectado.",
+    "codex_state": "El código es público. La versión en línea está en preparación.",
+    "view_more": "Ver la ficha",
+    "next": "Siguiente",
+    "sample": "Interfaz real con datos de ejemplo.",
+    "shot_alt": "Captura de {name}",
+    "label_problem": "Qué es",
+    "label_did": "Qué hice yo",
+    "label_hard": "Un reto técnico",
+    "label_state": "Estado",
+    "label_tech": "Tecnologías"
   },
   "contact": {
     "word": "escribe",
@@ -54,13 +78,15 @@
     "back_home": "Volver al inicio"
   },
   "meta": {
-    "title": "Izan de la Cruz {'|'} Desarrollador Full Stack Junior"
+    "title": "Izan de la Cruz {'|'} Desarrollador Full Stack Junior",
+    "description": "Portafolio de Izan de la Cruz, desarrollador full stack junior graduado en DAM y DAW. Proyectos web con Vue, React, Node.js y Laravel."
   },
   "a11y": {
     "toggle_theme": "Cambiar tema claro/oscuro",
     "change_language": "Cambiar idioma",
     "menu": "Secciones",
     "motion_off": "Pausar las animaciones",
-    "motion_on": "Activar las animaciones"
+    "motion_on": "Activar las animaciones",
+    "skip": "Ir al resumen en texto"
   }
 }

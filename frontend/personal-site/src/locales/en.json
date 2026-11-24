@@ -2,10 +2,12 @@
   "nav": {
     "projects": "Projects",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "overview": "Overview"
   },
   "hero": {
-    "intro": "De la Cruz. Junior full stack developer, graduate in cross-platform and web development."
+    "intro": "De la Cruz. Junior full stack developer, graduate in cross-platform and web development.",
+    "role": "Junior full stack developer, graduate in cross-platform and web development."
   },
   "about": {
     "title": "About me",
@@ -23,11 +25,33 @@
     "casulab_name": "Grupo Casulab",
     "casulab_desc": "Corporate website for a scientific equipment company in Terrassa, built as a team with a colleague during my internship.",
     "synapse_name": "Synapse",
-    "synapse_desc": "Collaborative agenda with several calendar types (work, education, personal and shared), roles and approval workflows, plus real-time notifications. Personal project in development: use test data only. The first load can take up to a minute.",
+    "synapse_desc": "Collaborative planner with work, education, personal and shared calendars, and real-time notifications.",
     "optica_name": "Óptica Santa Isabel",
     "optica_desc": "Website for an optician in Zaragoza, with a minimalist design, interactive animations, appointment requests and an email contact form.",
     "codex_name": "Codex",
-    "codex_desc": "A social network for students, with posts, real-time messages, video calls and a space for each school. My DAW final project, built in a team of four."
+    "codex_desc": "A social network for students, with posts, real-time messages, video calls and a space for each school. My DAW final project, built in a team of four.",
+    "casulab_problem": "The corporate site of a scientific equipment company in Terrassa. It brings together its three divisions, Enterlab, Rephile and Casulab, with their services and ways to get in touch.",
+    "casulab_did": "I built it in a team with a fellow intern during my internship.",
+    "synapse_problem": "An ordinary calendar treats an exam and a dinner the same way. Synapse separates work, education, personal and shared agendas, each with its own rules: in work agendas, for instance, events can need approval.",
+    "synapse_did": "A solo project: the React interface, the API with Express and Prisma, the PostgreSQL database and the deployment on Vercel, Render and Neon.",
+    "synapse_hard": "Importing a whole Google Calendar took so long that the server answered with a 502 error. I moved the import to the background and added on-screen progress.",
+    "synapse_state": "Online and in development. It is a demo: use test data only, and the first load can take up to a minute.",
+    "optica_problem": "The site of an optician in Zaragoza, open since 1985. It shows its services and collections and takes appointment requests.",
+    "optica_did": "The whole site: interface with Next.js and TypeScript, animations with Framer Motion and Rive, and the appointment form.",
+    "optica_hard": "Emailing the appointments without an outside service. A Next.js server route talks to the mail server over SMTP, so the credentials never reach the browser.",
+    "codex_problem": "A social network for students: post questions with code, follow people, talk in real time and have a private space for each school. It was my DAW final project.",
+    "codex_did": "In a team of four, I built most of the Laravel API (posts, Google sign-in, search, schools and notifications) and the deployment with Docker and GitHub Actions. I also worked on the interface.",
+    "codex_hard": "Getting notifications to arrive instantly. The Laravel API publishes them to Redis and a separate Socket.io server delivers them to each connected user.",
+    "codex_state": "The code is public. The online version is being prepared.",
+    "view_more": "See the project",
+    "next": "Next",
+    "sample": "Real interface with sample data.",
+    "shot_alt": "Screenshot of {name}",
+    "label_problem": "What it is",
+    "label_did": "What I did",
+    "label_hard": "A technical challenge",
+    "label_state": "Status",
+    "label_tech": "Technologies"
   },
   "contact": {
     "word": "write",
@@ -61,6 +85,7 @@
     "change_language": "Change language",
     "menu": "Sections",
     "motion_off": "Pause animations",
-    "motion_on": "Turn animations on"
+    "motion_on": "Turn animations on",
+    "skip": "Skip to the text overview"
   }
 }

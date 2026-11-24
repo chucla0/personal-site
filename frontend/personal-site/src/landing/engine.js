@@ -1,9 +1,10 @@
 // Drives the landing: the dot of the "i" falls, becomes the tide that brings
 // each project, and ends up as the dot of the last word.
-// Everything is a function of u = scroll / viewport height.
+// Everything is a function of u, the scrolled distance in units of PACE screens.
 import { clamp, ease, lerp } from './math'
 import { scenes } from './scenes'
 
+const PACE = 0.66 // how much of a screen one unit of the story takes
 const STEP = 1.85 // from one project to the next
 const FIRST = 2.55 // where the first project is centred
 
@@ -61,7 +62,9 @@ export function createLanding(root) {
     el,
     inner: el.firstElementChild,
     title: el.querySelector('h2'),
-    draw: scenes[el.dataset.scene](el.querySelector('.sc')),
+    art: el.querySelector('.art'),
+    shot: el.querySelector('.shot'),
+    draw: scenes[el.dataset.scene](el.querySelector('.art')),
     drawn: -1
   }))
   const count = layers.length
@@ -86,6 +89,7 @@ export function createLanding(root) {
   const born = performance.now()
   let before = born
   let unit = innerHeight
+  let pace = unit * PACE
   let width = innerWidth
 
   const font = (size) => {
@@ -132,7 +136,7 @@ export function createLanding(root) {
     glyph = scanGlyph(font)
     dots = { a: tittle(letters.heroI, hero), b: tittle(letters.endI, end) }
     // 100lvh: phones hide their bars while scrolling and would otherwise fall short
-    spacer.style.height = `calc(${unit * (stops.contact + 0.1)}px + 100lvh)`
+    spacer.style.height = `calc(${pace * (stops.contact + 0.1)}px + 100lvh)`
     dirty = true
   }
 
@@ -146,12 +150,13 @@ export function createLanding(root) {
   // Mobile browser bars resize the viewport while scrolling: ignore those changes
   function resize() {
     if (innerWidth === width && Math.abs(innerHeight - unit) <= 140) return refresh()
-    const u = scrollY / unit
+    const u = scrollY / pace
     width = innerWidth
     unit = innerHeight
+    pace = unit * PACE
     refresh()
     // Stay at the same point of the story
-    land(u * unit)
+    land(u * pace)
   }
 
   // Slow swells, the tilt of the spring and an optional bump in the middle
@@ -206,7 +211,15 @@ export function createLanding(root) {
     if (opacity <= 0.01) return
     l.title.style.transform = still ? '' : `translateY(${(clamp(mid - u, -1, 1.4) * 5).toFixed(2)}vh)`
     const p = clamp((u - mid + 0.75) / 1.1)
-    if (Math.abs(p - l.drawn) > 0.0004) l.draw(l.drawn = p)
+    if (Math.abs(p - l.drawn) > 0.0004) {
+      l.drawn = p
+      // The drawing sets itself up and gives way to the real thing
+      l.draw(clamp(p / 0.46))
+      const t = ease((p - 0.46) / 0.22)
+      l.art.style.opacity = 1 - t
+      l.shot.style.opacity = t
+      l.shot.style.transform = `translateY(${((1 - t) * 14).toFixed(2)}%) scale(${(0.9 + t * 0.1).toFixed(3)})`
+    }
     letters.layers[i].forEach((el, k) => bob(el, k))
   }
 
@@ -241,7 +254,7 @@ export function createLanding(root) {
     if (!still) time += dt
     const W = innerWidth
     const H = innerHeight
-    const u = smooth / unit
+    const u = smooth / pace
     const push = still ? 0 : clamp((smooth - last) / H, -0.08, 0.08)
     last = smooth
     vel += push * 0.62 - slosh * 0.85 * dt
@@ -360,7 +373,7 @@ export function createLanding(root) {
       dirty = true
     },
     goTo(name, instant = false) {
-      const to = stops[name] * unit
+      const to = stops[name] * pace
       if (instant || still) return land(to)
       const far = Math.abs(to - scrollY) / unit
       trip = { from: scrollY, to, start: performance.now(), time: Math.min(3200, 700 + far * 260) }
