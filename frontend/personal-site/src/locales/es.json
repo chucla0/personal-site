@@ -1,66 +1,50 @@
 {
   "nav": {
-    "home": "Inicio",
-    "about": "Sobre Mí",
     "projects": "Proyectos",
-    "skills": "Habilidades",
-    "contact": "Contacto",
-    "language": "Idioma"
+    "about": "Sobre mí",
+    "contact": "Contacto"
   },
   "hero": {
-    "greeting": "Hola, soy",
-    "name": "Izan de la Cruz",
-    "title": "Desarrollador Full Stack Junior",
-    "subtitle": "Graduado en DAM y DAW, apasionado por crear soluciones tecnológicas innovadoras",
-    "cta_projects": "Ver Proyectos",
-    "cta_contact": "Contactar"
+    "intro": "De la Cruz. Desarrollador full stack junior, graduado en DAM y DAW."
   },
   "about": {
-    "title": "Sobre Mí",
-    "intro": "Soy un desarrollador apasionado por la tecnología y el aprendizaje continuo.",
-    "education_title": "Formación",
-    "education_dam": "Desarrollo de Aplicaciones Multiplataforma (DAM)",
-    "education_daw": "Desarrollo de Aplicaciones Web (DAW)",
-    "experience_title": "Experiencia",
-    "experience_text": "Mi experiencia abarca el desarrollo de aplicaciones web full-stack, utilizando frameworks como Vue.js en el frontend y Node.js con Sequelize en el backend. He diseñado y consumido APIs REST y tengo conocimientos en la arquitectura de microservicios. Además, he desarrollado videojuegos con Unity, explorando la creación de experiencias multijugador con Mirror y la integración con Steamworks. Mi enfoque se centra en escribir código limpio, escalable y mantenible.",
-    "interests_title": "Intereses",
-    "interests_text": "Soy un entusiasta del aprendizaje continuo, siempre explorando nuevas fronteras tecnológicas. Me interesa profundamente la automatización de despliegues (CI/CD) con herramientas como GitHub Actions y la contenedorización de aplicaciones con Docker. Me apasiona tanto la creación de interfaces de usuario interactivas como la construcción de una lógica de servidor robusta, buscando siempre la mejor herramienta para cada desafío."
+    "title": "Sobre mí",
+    "text": "Me gusta tanto la interfaz como la lógica que la sostiene.",
+    "skills": "Trabajo con Vue, React y Node.js, con MySQL, PostgreSQL y MongoDB. Uso Docker y GitHub Actions para desplegar, y he hecho juegos con Unity."
   },
   "projects": {
-    "title": "Mis Proyectos",
-    "subtitle": "Aquí están algunos de los proyectos en los que he trabajado",
-    "view_code": "Ver Código",
-    "view_demo": "Ver Demo",
+    "view_code": "Leer el código",
+    "view_demo": "Abrir la web",
     "casulab_name": "Grupo Casulab",
     "casulab_desc": "Web corporativa para una empresa de equipamiento científico de Terrassa, desarrollada en equipo con un compañero durante mis prácticas.",
     "synapse_name": "Synapse",
     "synapse_desc": "Agenda colaborativa con varios tipos de calendario (trabajo, educación, personal y compartido), roles y flujos de aprobación, con notificaciones en tiempo real. Proyecto personal en desarrollo: usa solo datos de prueba. La primera carga puede tardar hasta un minuto.",
     "optica_name": "Óptica Santa Isabel",
-    "optica_desc": "Sitio web para una óptica de Zaragoza, con diseño minimalista, animaciones interactivas, solicitud de cita previa y formulario de contacto por correo.",
-    "typing_name": "Juego de Mecanografía",
-    "typing_desc": "Juego de mecanografía hecho con Vue, Node.js usando router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL y Mongo, además de Nginx para proxy inverso. Es un proyecto de clase de DAW."
-  },
-  "skills": {
-    "title": "Habilidades Técnicas",
-    "subtitle": "Tecnologías y herramientas con las que trabajo",
-    "languages": "Lenguajes de Programación",
-    "frameworks": "Frameworks y Librerías",
-    "tools": "Herramientas y Tecnologías",
-    "databases": "Bases de Datos"
+    "optica_desc": "Sitio web para una óptica de Zaragoza, con diseño minimalista, animaciones interactivas, solicitud de cita previa y formulario de contacto por correo."
   },
   "contact": {
+    "word": "escribe",
     "title": "Contacto",
-    "subtitle": "¿Tienes algún proyecto en mente? ¡Hablemos!",
+    "form_open": "Enviar un mensaje",
+    "close": "Cerrar",
+    "sending": "Enviando…",
     "form_name": "Nombre",
     "form_email": "Email",
     "form_message": "Mensaje",
     "form_submit": "Enviar Mensaje",
-    "social_title": "Encuéntrame en",
-    "form_name_placeholder": "> Tu nombre",
-    "form_email_placeholder": "> Tu email",
-    "form_message_placeholder": "> Cuéntame sobre tu proyecto...",
     "status_success": "¡Mensaje enviado con éxito! Te responderé pronto.",
     "status_error": "No se ha podido enviar el mensaje. Revisa los datos o escríbeme directamente por correo."
+  },
+  "controls": {
+    "night": "Noche",
+    "day": "Día",
+    "pause": "Pausa",
+    "move": "Mover"
+  },
+  "not_found": {
+    "title": "Página no encontrada",
+    "message": "Esta página no existe o ha cambiado de sitio.",
+    "back_home": "Volver al inicio"
   },
   "meta": {
     "title": "Izan de la Cruz {'|'} Desarrollador Full Stack Junior"
@@ -68,11 +52,8 @@
   "a11y": {
     "toggle_theme": "Cambiar tema claro/oscuro",
     "change_language": "Cambiar idioma",
-    "menu": "Abrir menú"
-  },
-  "not_found": {
-    "title": "Página no encontrada",
-    "message": "Esta página no existe o ha cambiado de sitio.",
-    "back_home": "Volver al inicio"
+    "menu": "Secciones",
+    "motion_off": "Pausar las animaciones",
+    "motion_on": "Activar las animaciones"
   }
 }
