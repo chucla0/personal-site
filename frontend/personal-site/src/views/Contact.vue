@@ -1,7 +1,8 @@
 <template>
   <div class="contact">
     <div class="contact-container">
-      <div class="section-header">
+      <h1 class="sr-only">{{ $t("contact.title") }}</h1>
+      <div class="section-header" aria-hidden="true">
         <span class="prompt">~$</span>
         <span class="command">contact --mode interactive</span>
       </div>
@@ -55,14 +56,17 @@
           <div class="terminal-content">
             <form @submit.prevent="handleSubmit" class="contact-form">
               <div class="form-group">
-                <label>
-                  <span class="var-symbol">$</span>
-                  <span class="var-name">NAME</span>
-                  <span class="equals">=</span>
+                <label for="contact-name">
+                  <span class="sr-only">{{ $t("contact.form_name") }}</span>
+                  <span class="var-symbol" aria-hidden="true">$</span>
+                  <span class="var-name" aria-hidden="true">NAME</span>
+                  <span class="equals" aria-hidden="true">=</span>
                 </label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
+                  autocomplete="name"
                   v-model="formData.name"
                   :placeholder="$t('contact.form_name_placeholder')"
                   required
@@ -70,14 +74,18 @@
               </div>
 
               <div class="form-group">
-                <label>
-                  <span class="var-symbol">$</span>
-                  <span class="var-name">EMAIL</span>
-                  <span class="equals">=</span>
+                <label for="contact-email">
+                  <span class="sr-only">{{ $t("contact.form_email") }}</span>
+                  <span class="var-symbol" aria-hidden="true">$</span>
+                  <span class="var-name" aria-hidden="true">EMAIL</span>
+                  <span class="equals" aria-hidden="true">=</span>
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   name="_replyto"
+                  autocomplete="email"
+                  spellcheck="false"
                   v-model="formData.email"
                   :placeholder="$t('contact.form_email_placeholder')"
                   required
@@ -85,12 +93,14 @@
               </div>
 
               <div class="form-group">
-                <label>
-                  <span class="var-symbol">$</span>
-                  <span class="var-name">MESSAGE</span>
-                  <span class="equals">=</span>
+                <label for="contact-message">
+                  <span class="sr-only">{{ $t("contact.form_message") }}</span>
+                  <span class="var-symbol" aria-hidden="true">$</span>
+                  <span class="var-name" aria-hidden="true">MESSAGE</span>
+                  <span class="equals" aria-hidden="true">=</span>
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   v-model="formData.message"
                   :placeholder="$t('contact.form_message_placeholder')"
@@ -104,8 +114,8 @@
                 <span class="btn-text">{{ $t("contact.form_submit") }}</span>
               </button>
 
-              <p v-if="status" :class="{ 'text-green-500': status.includes('éxito'), 'text-red-500': status.includes('problema') }">
-                {{ status }}
+              <p class="form-status" :class="status" role="status">
+                <template v-if="status">{{ $t(`contact.status_${status}`) }}</template>
               </p>
             </form>
           </div>
@@ -125,7 +135,7 @@ const formData = ref({
   message: "",
 });
 
-const status = ref("");
+const status = ref(""); // "", "success" or "error"
 const submitting = ref(false);
 const formspreeEndpoint = "https://formspree.io/f/xwpyapqy"; // User-provided endpoint
 
@@ -148,21 +158,19 @@ const handleSubmit = async () => {
     });
 
     if (response.ok) {
-      status.value = "¡Mensaje enviado con éxito! Te responderé pronto.";
+      status.value = "success";
       formData.value = {
         name: "",
         email: "",
         message: "",
       };
     } else {
-      const result = await response.json();
-      status.value = result.errors
-        ? result.errors.map((error) => error.message).join(", ")
-        : "¡Ups! Hubo un problema al enviar tu mensaje.";
+      console.error("Submission rejected:", response.status);
+      status.value = "error";
     }
   } catch (error) {
     console.error("Submission error:", error);
-    status.value = "Ocurrió un error. Por favor, inténtalo de nuevo más tarde.";
+    status.value = "error";
   } finally {
     submitting.value = false;
   }
@@ -200,7 +208,7 @@ const handleSubmit = async () => {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
   gap: 2rem;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
@@ -359,6 +367,18 @@ const handleSubmit = async () => {
   color: var(--bg-primary);
   box-shadow: 0 0 20px rgba(var(--accent-hover-rgb), 0.6);
   transform: translateY(-2px);
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status.success {
+  color: var(--accent-green);
+}
+
+.form-status.error {
+  color: var(--accent-pink);
 }
 
 .submit-btn:active {

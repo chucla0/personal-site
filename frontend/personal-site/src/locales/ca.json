@@ -31,18 +31,14 @@
     "subtitle": "Aquí hi ha alguns dels projectes en els quals he treballat",
     "view_code": "Veure Codi",
     "view_demo": "Veure Demo",
-    "project1_name": "Projecte Unity",
-    "project1_desc": "Joc/aplicació interactiva desenvolupada amb Unity Engine",
-    "project1_tech": "Unity, C#, Game Design",
-    "project2_name": "Aplicació Web DAW",
-    "project2_desc": "Aplicació web full-stack desenvolupada durant el curs de DAW",
-    "project2_tech": "Vue.js, Node.js, MySQL",
-    "project3_name": "App Mòbil DAM",
-    "project3_desc": "Aplicació multiplataforma desenvolupada en DAM",
-    "project3_tech": "Java, Android SDK, SQLite",
-    "project4_name": "Joc de Mecanografia",
-    "project4_desc": "Joc de mecanografia fet amb Vue, Node.js utilitzant router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL i Mongo, a més de Nginx per a proxy invers. És un projecte de classe de DAW.",
-    "project4_tech": "Vue.js, Node.js, Pinia, Socket.io, Sequelize, Docker, GitHub Actions, SQL, MongoDB, Nginx"
+    "casulab_name": "Grupo Casulab",
+    "casulab_desc": "Web corporativa per a una empresa d'equipament científic de Terrassa, desenvolupada en equip amb un company durant les meves pràctiques.",
+    "synapse_name": "Synapse",
+    "synapse_desc": "Agenda col·laborativa amb diversos tipus de calendari (feina, educació, personal i compartit), rols i fluxos d'aprovació, amb notificacions en temps real. Projecte personal en desenvolupament: fes servir només dades de prova. La primera càrrega pot trigar fins a un minut.",
+    "optica_name": "Óptica Santa Isabel",
+    "optica_desc": "Lloc web per a una òptica de Saragossa, amb disseny minimalista, animacions interactives, sol·licitud de cita prèvia i formulari de contacte per correu.",
+    "typing_name": "Joc de Mecanografia",
+    "typing_desc": "Joc de mecanografia fet amb Vue, Node.js utilitzant router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL i Mongo, a més de Nginx per a proxy invers. És un projecte de classe de DAW."
   },
   "skills": {
     "title": "Habilitats Tècniques",
@@ -62,7 +58,9 @@
     "social_title": "Troba'm a",
     "form_name_placeholder": "> El teu nom",
     "form_email_placeholder": "> El teu email",
-    "form_message_placeholder": "> Explica'm sobre el teu projecte..."
+    "form_message_placeholder": "> Explica'm sobre el teu projecte...",
+    "status_success": "Missatge enviat amb èxit! Et respondré aviat.",
+    "status_error": "No s'ha pogut enviar el missatge. Revisa les dades o escriu-me directament per correu."
   },
   "meta": {
     "title": "Izan de la Cruz {'|'} Desenvolupador Full Stack Junior"
@@ -71,5 +69,10 @@
     "toggle_theme": "Canviar tema clar/fosc",
     "change_language": "Canviar idioma",
     "menu": "Obrir menú"
+  },
+  "not_found": {
+    "title": "Pàgina no trobada",
+    "message": "Aquesta pàgina no existeix o ha canviat de lloc.",
+    "back_home": "Tornar a l'inici"
   }
 }

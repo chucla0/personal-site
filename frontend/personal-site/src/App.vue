@@ -226,6 +226,15 @@ body {
   color: var(--text-primary);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 #app {
   min-height: 100vh;
   background: var(--bg-primary);
@@ -498,7 +507,7 @@ main {
   width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile-menu-btn {
     display: block;
   }

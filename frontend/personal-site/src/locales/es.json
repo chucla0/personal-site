@@ -31,18 +31,14 @@
     "subtitle": "Aquí están algunos de los proyectos en los que he trabajado",
     "view_code": "Ver Código",
     "view_demo": "Ver Demo",
-    "project1_name": "Proyecto Unity",
-    "project1_desc": "Juego/aplicación interactiva desarrollada con Unity Engine",
-    "project1_tech": "Unity, C#, Game Design",
-    "project2_name": "Aplicación Web DAW",
-    "project2_desc": "Aplicación web full-stack desarrollada durante el curso de DAW",
-    "project2_tech": "Vue.js, Node.js, MySQL",
-    "project3_name": "App Móvil DAM",
-    "project3_desc": "Aplicación multiplataforma desarrollada en DAM",
-    "project3_tech": "Java, Android SDK, SQLite",
-    "project4_name": "Juego de Mecanografía",
-    "project4_desc": "Juego de mecanografía hecho con Vue, Node.js usando router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL y Mongo, además de Nginx para proxy inverso. Es un proyecto de clase de DAW.",
-    "project4_tech": "Vue.js, Node.js, Pinia, Socket.io, Sequelize, Docker, GitHub Actions, SQL, MongoDB, Nginx"
+    "casulab_name": "Grupo Casulab",
+    "casulab_desc": "Web corporativa para una empresa de equipamiento científico de Terrassa, desarrollada en equipo con un compañero durante mis prácticas.",
+    "synapse_name": "Synapse",
+    "synapse_desc": "Agenda colaborativa con varios tipos de calendario (trabajo, educación, personal y compartido), roles y flujos de aprobación, con notificaciones en tiempo real. Proyecto personal en desarrollo: usa solo datos de prueba. La primera carga puede tardar hasta un minuto.",
+    "optica_name": "Óptica Santa Isabel",
+    "optica_desc": "Sitio web para una óptica de Zaragoza, con diseño minimalista, animaciones interactivas, solicitud de cita previa y formulario de contacto por correo.",
+    "typing_name": "Juego de Mecanografía",
+    "typing_desc": "Juego de mecanografía hecho con Vue, Node.js usando router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL y Mongo, además de Nginx para proxy inverso. Es un proyecto de clase de DAW."
   },
   "skills": {
     "title": "Habilidades Técnicas",
@@ -62,7 +58,9 @@
     "social_title": "Encuéntrame en",
     "form_name_placeholder": "> Tu nombre",
     "form_email_placeholder": "> Tu email",
-    "form_message_placeholder": "> Cuéntame sobre tu proyecto..."
+    "form_message_placeholder": "> Cuéntame sobre tu proyecto...",
+    "status_success": "¡Mensaje enviado con éxito! Te responderé pronto.",
+    "status_error": "No se ha podido enviar el mensaje. Revisa los datos o escríbeme directamente por correo."
   },
   "meta": {
     "title": "Izan de la Cruz {'|'} Desarrollador Full Stack Junior"
@@ -71,5 +69,10 @@
     "toggle_theme": "Cambiar tema claro/oscuro",
     "change_language": "Cambiar idioma",
     "menu": "Abrir menú"
+  },
+  "not_found": {
+    "title": "Página no encontrada",
+    "message": "Esta página no existe o ha cambiado de sitio.",
+    "back_home": "Volver al inicio"
   }
 }
