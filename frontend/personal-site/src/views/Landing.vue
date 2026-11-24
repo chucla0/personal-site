@@ -22,7 +22,7 @@
           <h1 class="big" aria-label="Izan de la Cruz">
             <span v-for="(c, k) in 'izan'" :key="k" aria-hidden="true" :class="{ i: c === 'i' }">{{ c }}</span>
           </h1>
-          <p>{{ $t('hero.intro') }}</p>
+          <p>{{ $t('hero.intro') }} <strong>{{ $t('hero.seek') }}</strong></p>
         </section>
         <section class="sec me">
           <h2 class="sr-only">{{ $t('about.title') }}</h2>
@@ -144,6 +144,7 @@ onBeforeUnmount(() => {
 
 .hero h1 { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); font-size: 62vh; }
 .hero p { position: absolute; left: clamp(18px, 3.2vw, 52px); bottom: 6vh; max-width: 32ch; }
+.hero strong { display: block; }
 .me { display: flex; flex-direction: column; gap: 5vh; padding: max(15vh, 88px) clamp(18px, 3.2vw, 52px) 0; }
 .lead { max-width: 24ch; font-size: clamp(28px, min(4.4vw, 8vh), 84px); line-height: 1.08; font-weight: 700; letter-spacing: -0.025em; }
 .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 34ch)); gap: 1.4em 4vw; }
@@ -173,6 +174,8 @@ onBeforeUnmount(() => {
   .bar .pill { padding: 6px 10px; font-size: 13px; }
   .bar nav { gap: 14px; }
   .hero h1 { top: 48%; font-size: 54vh; }
+  .hero p { max-width: none; bottom: 4vh; }
+  .hero strong { display: inline; }
   .end h2 { font-size: 50vh; }
   .in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1vh 5vw; padding: 60px 24px 2vh; font-size: 14px; line-height: 1.35; }
   .tx { padding: 0; }

@@ -7,7 +7,8 @@
   },
   "hero": {
     "intro": "De la Cruz. Desarrollador full stack junior, graduado en DAM y DAW.",
-    "role": "Desarrollador full stack junior, graduado en DAM y DAW."
+    "role": "Desarrollador full stack junior, graduado en DAM y DAW.",
+    "seek": "Busco empleo."
   },
   "about": {
     "title": "Sobre mí",
@@ -17,21 +18,21 @@
     "work_title": "Trabajo con",
     "work": "Vue, React y Node.js, API REST y microservicios, y MySQL, PostgreSQL o MongoDB. Despliego con Docker y GitHub Actions.",
     "also_title": "También",
-    "also": "Hice la web de Casulab en mis prácticas y he creado videojuegos con Unity, con multijugador en Mirror e integración con Steamworks."
+    "also": "En mis prácticas me ocupé sobre todo del diseño de la nueva web de Casulab, y he creado videojuegos con Unity, con multijugador en Mirror e integración con Steamworks."
   },
   "projects": {
     "view_code": "Leer el código",
     "view_demo": "Abrir la web",
     "casulab_name": "Grupo Casulab",
-    "casulab_desc": "Web corporativa para una empresa de equipamiento científico de Terrassa, desarrollada en equipo con un compañero durante mis prácticas.",
+    "casulab_desc": "Renovación de la web de una empresa de equipamiento científico de Terrassa, en equipo con un compañero durante mis prácticas. Me ocupé sobre todo del diseño.",
     "synapse_name": "Synapse",
     "synapse_desc": "Agenda colaborativa con calendarios de trabajo, educación, personales y compartidos, y avisos en tiempo real.",
     "optica_name": "Óptica Santa Isabel",
     "optica_desc": "Sitio web para una óptica de Zaragoza, con diseño minimalista, animaciones interactivas, solicitud de cita previa y formulario de contacto por correo.",
     "codex_name": "Codex",
     "codex_desc": "Red social para estudiantes, con publicaciones, mensajes en tiempo real, videollamadas y espacios por centro. Mi proyecto final de DAW, hecho en un equipo de cuatro.",
-    "casulab_problem": "La web corporativa de una empresa de equipamiento científico de Terrassa. Reúne sus tres divisiones, Enterlab, Rephile y Casulab, con sus servicios y formas de contacto.",
-    "casulab_did": "La desarrollé en equipo con un compañero durante mis prácticas.",
+    "casulab_problem": "La renovación de la web corporativa de una empresa de equipamiento científico de Terrassa. Reúne sus tres divisiones, Enterlab, Rephile y Casulab, con sus servicios y formas de contacto.",
+    "casulab_did": "Principalmente el diseño. La hicimos en equipo, un compañero y yo, durante mis prácticas.",
     "synapse_problem": "Un calendario normal trata igual un examen que una cena. Synapse separa agendas de trabajo, educación, personales y compartidas, y cada una tiene sus reglas: en las de trabajo, por ejemplo, los eventos pueden necesitar aprobación.",
     "synapse_did": "Es un proyecto en solitario: la interfaz en React, la API con Express y Prisma, la base de datos PostgreSQL y el despliegue en Vercel, Render y Neon.",
     "synapse_hard": "Importar un Google Calendar entero tardaba tanto que el servidor respondía con un error 502. Pasé la importación a segundo plano y añadí el progreso en pantalla.",
@@ -49,9 +50,10 @@
     "shot_alt": "Captura de {name}",
     "label_problem": "Qué es",
     "label_did": "Qué hice yo",
-    "label_hard": "Un reto técnico",
+    "label_hard": "Un reto",
     "label_state": "Estado",
-    "label_tech": "Tecnologías"
+    "label_tech": "Tecnologías",
+    "casulab_hard": "La empresa ya tenía web y había que renovarla. Lo que más me costó fue encontrar un diseño que al cliente le pareciera correcto."
   },
   "contact": {
     "word": "escribe",
@@ -79,7 +81,7 @@
   },
   "meta": {
     "title": "Izan de la Cruz {'|'} Desarrollador Full Stack Junior",
-    "description": "Portafolio de Izan de la Cruz, desarrollador full stack junior graduado en DAM y DAW. Proyectos web con Vue, React, Node.js y Laravel."
+    "description": "Portafolio de Izan de la Cruz, desarrollador full stack junior graduado en DAM y DAW. Proyectos web con Vue, React, Node.js y Laravel. Busco empleo."
   },
   "a11y": {
     "toggle_theme": "Cambiar tema claro/oscuro",

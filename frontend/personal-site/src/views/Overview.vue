@@ -3,7 +3,7 @@
     <PageBar />
     <main>
       <h1 class="big">Izan de la Cruz</h1>
-      <p class="lead">{{ $t('hero.role') }}</p>
+      <p class="lead">{{ $t('hero.role') }} {{ $t('hero.seek') }}</p>
       <div class="links">
         <a href="mailto:iizan.cruzz@gmail.com">iizan.cruzz@gmail.com</a>
         <a href="https://linkedin.com/in/iizancruzz" target="_blank" rel="noopener">LinkedIn</a>

@@ -7,7 +7,8 @@
   },
   "hero": {
     "intro": "De la Cruz. Desenvolupador full stack junior, graduat en DAM i DAW.",
-    "role": "Desenvolupador full stack junior, graduat en DAM i DAW."
+    "role": "Desenvolupador full stack junior, graduat en DAM i DAW.",
+    "seek": "Busco feina."
   },
   "about": {
     "title": "Sobre mi",
@@ -17,21 +18,21 @@
     "work_title": "Treballo amb",
     "work": "Vue, React i Node.js, API REST i microserveis, i MySQL, PostgreSQL o MongoDB. Desplego amb Docker i GitHub Actions.",
     "also_title": "També",
-    "also": "Vaig fer el web de Casulab a les pràctiques i he creat videojocs amb Unity, amb multijugador en Mirror i integració amb Steamworks."
+    "also": "Durant les meves pràctiques em vaig ocupar sobretot del disseny del nou web de Casulab, i he creat videojocs amb Unity, amb multijugador en Mirror i integració amb Steamworks."
   },
   "projects": {
     "view_code": "Llegir el codi",
     "view_demo": "Obrir el web",
     "casulab_name": "Grupo Casulab",
-    "casulab_desc": "Web corporativa per a una empresa d'equipament científic de Terrassa, desenvolupada en equip amb un company durant les meves pràctiques.",
+    "casulab_desc": "Renovació del web d'una empresa d'equipament científic de Terrassa, en equip amb un company durant les meves pràctiques. Em vaig ocupar sobretot del disseny.",
     "synapse_name": "Synapse",
     "synapse_desc": "Agenda col·laborativa amb calendaris de feina, educació, personals i compartits, i avisos en temps real.",
     "optica_name": "Óptica Santa Isabel",
     "optica_desc": "Lloc web per a una òptica de Saragossa, amb disseny minimalista, animacions interactives, sol·licitud de cita prèvia i formulari de contacte per correu.",
     "codex_name": "Codex",
     "codex_desc": "Xarxa social per a estudiants, amb publicacions, missatges en temps real, videotrucades i espais per centre. El meu projecte final de DAW, fet en un equip de quatre.",
-    "casulab_problem": "El web corporatiu d'una empresa d'equipament científic de Terrassa. Reuneix les seves tres divisions, Enterlab, Rephile i Casulab, amb els seus serveis i formes de contacte.",
-    "casulab_did": "El vaig desenvolupar en equip amb un company durant les meves pràctiques.",
+    "casulab_problem": "La renovació del web corporatiu d'una empresa d'equipament científic de Terrassa. Reuneix les seves tres divisions, Enterlab, Rephile i Casulab, amb els seus serveis i formes de contacte.",
+    "casulab_did": "Principalment el disseny. El vam fer en equip, un company i jo, durant les meves pràctiques.",
     "synapse_problem": "Un calendari normal tracta igual un examen que un sopar. Synapse separa agendes de feina, educació, personals i compartides, i cadascuna té les seves regles: a les de feina, per exemple, els esdeveniments poden necessitar aprovació.",
     "synapse_did": "És un projecte en solitari: la interfície en React, l'API amb Express i Prisma, la base de dades PostgreSQL i el desplegament a Vercel, Render i Neon.",
     "synapse_hard": "Importar un Google Calendar sencer trigava tant que el servidor responia amb un error 502. Vaig passar la importació a segon pla i vaig afegir el progrés en pantalla.",
@@ -49,9 +50,10 @@
     "shot_alt": "Captura de {name}",
     "label_problem": "Què és",
     "label_did": "Què vaig fer jo",
-    "label_hard": "Un repte tècnic",
+    "label_hard": "Un repte",
     "label_state": "Estat",
-    "label_tech": "Tecnologies"
+    "label_tech": "Tecnologies",
+    "casulab_hard": "L'empresa ja tenia web i calia renovar-lo. El que més em va costar va ser trobar un disseny que al client li semblés correcte."
   },
   "contact": {
     "word": "escriu",
