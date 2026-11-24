@@ -31,18 +31,12 @@
     "subtitle": "Here are some of the projects I've worked on",
     "view_code": "View Code",
     "view_demo": "View Demo",
-    "project1_name": "Unity Project",
-    "project1_desc": "Interactive game/application developed with Unity Engine",
-    "project1_tech": "Unity, C#, Game Design",
-    "project2_name": "DAW Web Application",
-    "project2_desc": "Full-stack web application developed during DAW course",
-    "project2_tech": "Vue.js, Node.js, MySQL",
-    "project3_name": "DAM Mobile App",
-    "project3_desc": "Cross-platform application developed in DAM",
-    "project3_tech": "Java, Android SDK, SQLite",
-    "project4_name": "Typing Game",
-    "project4_desc": "Typing game made with Vue, Node.js using router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL, and Mongo, plus Nginx for reverse proxy. It's a DAW class project.",
-    "project4_tech": "Vue.js, Node.js, Pinia, Socket.io, Sequelize, Docker, GitHub Actions, SQL, MongoDB, Nginx"
+    "synapse_name": "Synapse",
+    "synapse_desc": "Collaborative agenda with several calendar types (work, education, personal and shared), roles and approval workflows, plus real-time notifications. Personal project in development: use test data only. The first load can take up to a minute.",
+    "optica_name": "Óptica Santa Isabel",
+    "optica_desc": "Website for an optician in Zaragoza, with a minimalist design, interactive animations, appointment requests and an email contact form.",
+    "typing_name": "Typing Game",
+    "typing_desc": "Typing game made with Vue, Node.js using router, Pinia, Sockets, Sequelize, Docker, GitHub Actions, SQL, and Mongo, plus Nginx for reverse proxy. It's a DAW class project."
   },
   "skills": {
     "title": "Technical Skills",
@@ -62,7 +56,9 @@
     "social_title": "Find me on",
     "form_name_placeholder": "> Your name",
     "form_email_placeholder": "> Your email",
-    "form_message_placeholder": "> Tell me about your project..."
+    "form_message_placeholder": "> Tell me about your project...",
+    "status_success": "Message sent successfully! I will reply soon.",
+    "status_error": "The message could not be sent. Check your details or email me directly."
   },
   "meta": {
     "title": "Izan de la Cruz {'|'} Junior Full Stack Developer"
@@ -71,5 +67,10 @@
     "toggle_theme": "Toggle light/dark theme",
     "change_language": "Change language",
     "menu": "Open menu"
+  },
+  "not_found": {
+    "title": "Page not found",
+    "message": "This page does not exist or has moved.",
+    "back_home": "Back to home"
   }
 }

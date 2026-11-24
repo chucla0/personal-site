@@ -1,7 +1,8 @@
 <template>
   <div class="about">
     <div class="container">
-      <div class="section-header">
+      <h1 class="sr-only">{{ $t("about.title") }}</h1>
+      <div class="section-header" aria-hidden="true">
         <div class="command-line">
           <span class="prompt">~$</span>
           <span class="command">cat about.md</span>

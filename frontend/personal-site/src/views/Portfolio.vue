@@ -1,7 +1,8 @@
 <template>
   <div class="portfolio">
     <div class="container">
-      <div class="section-header">
+      <h1 class="sr-only">{{ $t("projects.title") }}</h1>
+      <div class="section-header" aria-hidden="true">
         <span class="prompt">~$</span>
         <span class="command">ls -la ./projects/</span>
       </div>
@@ -10,7 +11,7 @@
         <div class="project-card" v-for="project in projects" :key="project.id">
           <div class="file-header">
             <span class="file-type">{{ project.type }}</span>
-            <span class="file-name">{{ $t(project.titleKey) }}</span>
+            <h2 class="file-name">{{ $t(project.titleKey) }}</h2>
           </div>
           <div class="file-content">
             <div class="code-preview">
@@ -21,7 +22,7 @@
               <div class="tech-tags">
                 <span
                   class="tech-tag"
-                  v-for="tag in $t(project.tagsKey).split(', ')"
+                  v-for="tag in project.tags"
                   :key="tag"
                 >
                   {{ tag }}
@@ -29,10 +30,16 @@
               </div>
             </div>
             <div class="file-actions">
-              <a :href="project.codeLink" target="_blank" class="action-link">
+              <a :href="project.codeLink" target="_blank" rel="noopener" class="action-link">
                 <Code :size="16" /> {{ $t("projects.view_code") }}
               </a>
-              <a :href="project.demoLink" target="_blank" class="action-link secondary">
+              <a
+                v-if="project.demoLink"
+                :href="project.demoLink"
+                target="_blank"
+                rel="noopener"
+                class="action-link secondary"
+              >
                 <Rocket :size="16" /> {{ $t("projects.view_demo") }}
               </a>
             </div>
@@ -44,20 +51,36 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { Code, Rocket } from "lucide-vue-next";
 
-const projects = ref([
+const projects = [
   {
-    id: 1,
+    id: "synapse",
+    type: ".jsx",
+    titleKey: "projects.synapse_name",
+    descKey: "projects.synapse_desc",
+    tags: ["React", "Vite", "Node.js", "Express", "Prisma", "PostgreSQL", "Socket.io"],
+    demoLink: "https://synapse-eight-brown.vercel.app/",
+    codeLink: "https://github.com/chucla0/Synapse",
+  },
+  {
+    id: "optica",
+    type: ".tsx",
+    titleKey: "projects.optica_name",
+    descKey: "projects.optica_desc",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Rive", "Nodemailer"],
+    demoLink: "https://optica-santa-isabel.vercel.app/",
+    codeLink: "https://github.com/chucla0/optica-santa-isabel",
+  },
+  {
+    id: "typing",
     type: ".vue",
-    titleKey: "projects.project4_name",
-    descKey: "projects.project4_desc",
-    tagsKey: "projects.project4_tech",
-    demoLink: "http://productiongr3.daw.inspedralbes.cat/",
+    titleKey: "projects.typing_name",
+    descKey: "projects.typing_desc",
+    tags: ["Vue.js", "Node.js", "Pinia", "Socket.io", "Sequelize", "Docker", "GitHub Actions", "SQL", "MongoDB", "Nginx"],
     codeLink: "https://github.com/inspedralbes/tr1-type-racer-royale-grup3daw",
   },
-]);
+];
 </script>
 
 <style scoped>
@@ -91,7 +114,7 @@ const projects = ref([
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   gap: 2rem;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }

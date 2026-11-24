@@ -1,7 +1,8 @@
 <template>
   <div class="skills">
     <div class="skills-container">
-      <div class="section-header">
+      <h1 class="sr-only">{{ $t("skills.title") }}</h1>
+      <div class="section-header" aria-hidden="true">
         <span class="prompt">~$</span>
         <span class="command">cat skills.config</span>
       </div>
@@ -9,11 +10,11 @@
       <div class="skills-grid">
         <!-- Programming Languages -->
         <div class="skill-category">
-          <div class="category-header">
-            <span class="bracket">[</span>
+          <h2 class="category-header">
+            <span class="bracket" aria-hidden="true">[</span>
             <span class="category-name">{{ $t("skills.languages") }}</span>
-            <span class="bracket">]</span>
-          </div>
+            <span class="bracket" aria-hidden="true">]</span>
+          </h2>
           <div class="skill-list">
             <a
               v-for="skill in languages"
@@ -30,11 +31,11 @@
 
         <!-- Frameworks & Libraries -->
         <div class="skill-category">
-          <div class="category-header">
-            <span class="bracket">[</span>
+          <h2 class="category-header">
+            <span class="bracket" aria-hidden="true">[</span>
             <span class="category-name">{{ $t("skills.frameworks") }}</span>
-            <span class="bracket">]</span>
-          </div>
+            <span class="bracket" aria-hidden="true">]</span>
+          </h2>
           <div class="skill-list">
             <a
               v-for="skill in frameworks"
@@ -51,11 +52,11 @@
 
         <!-- Tools & Technologies -->
         <div class="skill-category">
-          <div class="category-header">
-            <span class="bracket">[</span>
+          <h2 class="category-header">
+            <span class="bracket" aria-hidden="true">[</span>
             <span class="category-name">{{ $t("skills.tools") }}</span>
-            <span class="bracket">]</span>
-          </div>
+            <span class="bracket" aria-hidden="true">]</span>
+          </h2>
           <div class="skill-list">
             <a
               v-for="skill in tools"
@@ -72,11 +73,11 @@
 
         <!-- Databases -->
         <div class="skill-category">
-          <div class="category-header">
-            <span class="bracket">[</span>
+          <h2 class="category-header">
+            <span class="bracket" aria-hidden="true">[</span>
             <span class="category-name">{{ $t("skills.databases") }}</span>
-            <span class="bracket">]</span>
-          </div>
+            <span class="bracket" aria-hidden="true">]</span>
+          </h2>
           <div class="skill-list">
             <a
               v-for="skill in databases"
