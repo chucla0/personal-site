@@ -53,6 +53,38 @@ export const scenes = {
     })
   },
 
+  // Students that find each other and start talking
+  codex(host) {
+    const s = canvas(host)
+    const people = [[150, 170, 54], [400, 110, 70], [655, 190, 50], [255, 390, 66], [540, 375, 78], [110, 520, 40], [400, 535, 46], [690, 520, 56]]
+    const bonds = [[0, 1], [1, 2], [0, 3], [1, 3], [1, 4], [2, 4], [3, 4], [3, 5], [3, 6], [4, 6], [4, 7]].map(([a, b], i) => {
+      const [x1, y1] = people[a]
+      const [x2, y2] = people[b]
+      return { el: add(s, 'path', { d: `M${x1} ${y1}L${x2} ${y2}`, pathLength: 1, 'stroke-dasharray': '1 1', stroke: 'var(--fg)', 'stroke-width': 9, 'stroke-linecap': 'round' }), at: 0.08 + i * 0.028 }
+    })
+    const dots = people.map(([cx, cy, r], i) => ({ el: add(s, 'circle', { cx, cy, r: 0, fill: i === 4 || i === 0 ? 'var(--hi)' : 'var(--fg)' }), r, at: i * 0.025 }))
+    const bubble = (x, y, fill, ink) => {
+      const g = add(s, 'g')
+      add(g, 'path', { d: 'M-70 -44H70a34 34 0 0 1 34 34v10a34 34 0 0 1 -34 34H-30L-64 66V34H-70a34 34 0 0 1 -34 -34v-10a34 34 0 0 1 34 -34z', fill })
+      ;[-44, 0, 44].forEach((cx) => add(g, 'circle', { cx, cy: -5, r: 11, fill: ink }))
+      return { el: g, x, y }
+    }
+    const talk = [bubble(500, 40, 'var(--hi)', 'var(--fg)'), bubble(395, 300, 'var(--fg)', 'var(--w)'), bubble(690, 300, 'var(--hi)', 'var(--fg)')]
+    return (p) => {
+      dots.forEach(({ el, r, at }) => el.setAttribute('r', (r * ease((p - at) / 0.25)).toFixed(1)))
+      bonds.forEach(({ el, at }) => {
+        const t = ease((p - at) / 0.2)
+        el.setAttribute('stroke-dashoffset', (1 - t).toFixed(3))
+        el.setAttribute('opacity', t > 0.01 ? 1 : 0)
+      })
+      talk.forEach(({ el, x, y }, i) => {
+        const t = 0.82 * ease((p - 0.36 - i * 0.08) / 0.16)
+        el.setAttribute('transform', `translate(${x} ${y}) scale(${t.toFixed(3)})`)
+        el.setAttribute('visibility', t > 0.02 ? 'inherit' : 'hidden')
+      })
+    }
+  },
+
   // A lens that brings an eye chart into focus
   optica(host) {
     const s = canvas(host)

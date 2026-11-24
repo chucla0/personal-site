@@ -10,7 +10,12 @@
   "about": {
     "title": "About me",
     "text": "I enjoy the interface as much as the logic that holds it up.",
-    "skills": "I work with Vue, React and Node.js, with MySQL, PostgreSQL and MongoDB. I use Docker and GitHub Actions to deploy, and I have made games with Unity."
+    "study_title": "Studies",
+    "study": "Graduate in cross-platform (DAM) and web (DAW) application development. Codex was my final project.",
+    "work_title": "I work with",
+    "work": "Vue, React and Node.js, REST APIs and microservices, and MySQL, PostgreSQL or MongoDB. I deploy with Docker and GitHub Actions.",
+    "also_title": "Also",
+    "also": "I built the Casulab site during my internship and have made Unity games, with Mirror multiplayer and Steamworks integration."
   },
   "projects": {
     "view_code": "Read the code",
@@ -20,7 +25,9 @@
     "synapse_name": "Synapse",
     "synapse_desc": "Collaborative agenda with several calendar types (work, education, personal and shared), roles and approval workflows, plus real-time notifications. Personal project in development: use test data only. The first load can take up to a minute.",
     "optica_name": "Óptica Santa Isabel",
-    "optica_desc": "Website for an optician in Zaragoza, with a minimalist design, interactive animations, appointment requests and an email contact form."
+    "optica_desc": "Website for an optician in Zaragoza, with a minimalist design, interactive animations, appointment requests and an email contact form.",
+    "codex_name": "Codex",
+    "codex_desc": "A social network for students, with posts, real-time messages, video calls and a space for each school. My DAW final project, built in a team of four."
   },
   "contact": {
     "word": "write",

@@ -10,7 +10,12 @@
   "about": {
     "title": "Sobre mi",
     "text": "M'agrada tant la interfície com la lògica que la sosté.",
-    "skills": "Treballo amb Vue, React i Node.js, amb MySQL, PostgreSQL i MongoDB. Faig servir Docker i GitHub Actions per desplegar, i he fet jocs amb Unity."
+    "study_title": "Estudis",
+    "study": "Graduat en Desenvolupament d'Aplicacions Multiplataforma (DAM) i Web (DAW). Codex va ser el meu projecte final.",
+    "work_title": "Treballo amb",
+    "work": "Vue, React i Node.js, API REST i microserveis, i MySQL, PostgreSQL o MongoDB. Desplego amb Docker i GitHub Actions.",
+    "also_title": "També",
+    "also": "Vaig fer el web de Casulab a les pràctiques i he creat videojocs amb Unity, amb multijugador en Mirror i integració amb Steamworks."
   },
   "projects": {
     "view_code": "Llegir el codi",
@@ -20,7 +25,9 @@
     "synapse_name": "Synapse",
     "synapse_desc": "Agenda col·laborativa amb diversos tipus de calendari (feina, educació, personal i compartit), rols i fluxos d'aprovació, amb notificacions en temps real. Projecte personal en desenvolupament: fes servir només dades de prova. La primera càrrega pot trigar fins a un minut.",
     "optica_name": "Óptica Santa Isabel",
-    "optica_desc": "Lloc web per a una òptica de Saragossa, amb disseny minimalista, animacions interactives, sol·licitud de cita prèvia i formulari de contacte per correu."
+    "optica_desc": "Lloc web per a una òptica de Saragossa, amb disseny minimalista, animacions interactives, sol·licitud de cita prèvia i formulari de contacte per correu.",
+    "codex_name": "Codex",
+    "codex_desc": "Xarxa social per a estudiants, amb publicacions, missatges en temps real, videotrucades i espais per centre. El meu projecte final de DAW, fet en un equip de quatre."
   },
   "contact": {
     "word": "escriu",

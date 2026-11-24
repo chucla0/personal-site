@@ -25,7 +25,9 @@
         <section class="sec me">
           <h2 class="sr-only">{{ $t('about.title') }}</h2>
           <p class="lead">{{ $t('about.text') }}</p>
-          <p class="skills">{{ $t('about.skills') }}</p>
+          <div class="facts">
+            <p v-for="f in ['study', 'work', 'also']" :key="f"><strong>{{ $t(`about.${f}_title`) }}</strong> {{ $t(`about.${f}`) }}</p>
+          </div>
         </section>
         <section class="sec end">
           <h2 class="big" :aria-label="$t('contact.title')">
@@ -47,7 +49,7 @@
             <p>{{ $t(`projects.${p.key}_desc`) }}</p>
             <p>{{ p.tech }}</p>
             <div class="links">
-              <a :href="p.demo" target="_blank" rel="noopener">{{ $t('projects.view_demo') }}</a>
+              <a v-if="p.demo" :href="p.demo" target="_blank" rel="noopener">{{ $t('projects.view_demo') }}</a>
               <a v-if="p.code" :href="p.code" target="_blank" rel="noopener">{{ $t('projects.view_code') }}</a>
             </div>
           </div>
@@ -67,12 +69,13 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import ContactDialog from '@/components/ContactDialog.vue'
-import { createLanding, STOPS } from '@/landing/engine'
+import { createLanding } from '@/landing/engine'
 
 const projects = [
   { key: 'casulab', word: 'casulab', tech: 'Vue.js', demo: 'https://casulab.com/' },
   { key: 'synapse', word: 'synapse', tech: 'React, Node.js, Prisma, PostgreSQL, Socket.io', demo: 'https://synapse-eight-brown.vercel.app/', code: 'https://github.com/chucla0/Synapse' },
-  { key: 'optica', word: 'óptica', tech: 'Next.js, TypeScript, Tailwind CSS, Framer Motion', demo: 'https://optica-santa-isabel.vercel.app/', code: 'https://github.com/chucla0/optica-santa-isabel' }
+  { key: 'optica', word: 'óptica', tech: 'Next.js, TypeScript, Tailwind CSS, Framer Motion', demo: 'https://optica-santa-isabel.vercel.app/', code: 'https://github.com/chucla0/optica-santa-isabel' },
+  { key: 'codex', word: 'codex', tech: 'React, Laravel, Socket.io, WebRTC, Redis, Docker', code: 'https://github.com/chucla0/projecte-final-2025-26-daw-codex_trfinal_grup4' }
 ]
 
 const { locale, t, availableLocales } = useI18n()
@@ -123,7 +126,7 @@ const toggleTheme = () => {
 const go = (name) => landing?.goTo(name)
 const follow = (instant) => {
   const name = route.hash.slice(1)
-  if (name in STOPS) landing.goTo(name, instant)
+  if (name in landing.stops) landing.goTo(name, instant)
 }
 
 onMounted(() => {
@@ -148,42 +151,56 @@ onBeforeUnmount(() => landing?.destroy())
 .bar a:hover { text-decoration: underline; }
 .bar nav { display: flex; gap: 28px; }
 .controls { display: flex; gap: 8px; }
+/* The engine sets these to the colours of the water behind the header */
+.bar { color: var(--on, var(--ink)); transition: color 0.25s; }
+.bar .pill { background: var(--on, var(--ink)); color: var(--under, var(--paper)); transition: background-color 0.25s, color 0.25s; }
+.bar :focus-visible { outline-color: currentColor; }
 
 /* The drawing takes whatever room the words leave */
 .in { display: grid; grid-template: minmax(0, 1fr) auto / min(38vw, 38ch) minmax(0, 1fr); gap: 2vh 8vw; padding: max(10vh, 82px) clamp(18px, 3.2vw, 52px) 8vh; }
-.ly h2 { grid-area: 2 / 1 / auto / -1; justify-self: start; max-width: 100%; font-size: min(24vw, 40vh); }
+.ly h2 { grid-area: 2 / 1 / auto / -1; justify-self: start; font-size: 40vh; }
 .tx { grid-area: 1 / 1; padding-top: 3vh; }
 .tx p { margin-bottom: 0.7em; }
 .sc { grid-area: 1 / 2; min-height: 0; }
 .sc :deep(svg) { width: 100%; height: 100%; overflow: visible; }
 
-.hero h1 { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); font-size: min(37vw, 62vh); }
+.hero h1 { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); font-size: 62vh; }
 .hero p { position: absolute; left: clamp(18px, 3.2vw, 52px); bottom: 6vh; max-width: 32ch; }
-.me .lead { position: absolute; left: clamp(18px, 3.2vw, 52px); top: max(16vh, 84px); max-width: 21ch; font-size: clamp(28px, min(4.2vw, 7.4vh), 74px); line-height: 1.12; font-weight: 700; letter-spacing: -0.025em; }
-.me .skills { position: absolute; right: clamp(18px, 3.2vw, 52px); top: max(17vh, 86px); width: min(27vw, 30ch); }
-.end h2 { position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%); font-size: min(25vw, 56vh); }
+.me { display: flex; flex-direction: column; gap: 5vh; padding: max(15vh, 88px) clamp(18px, 3.2vw, 52px) 0; }
+.lead { max-width: 24ch; font-size: clamp(28px, min(4.4vw, 8vh), 84px); line-height: 1.08; font-weight: 700; letter-spacing: -0.025em; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 34ch)); gap: 1.4em 4vw; }
+.facts strong { display: block; }
+.end h2 { position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%); font-size: 56vh; }
 .end .links { position: absolute; left: 0; right: 0; bottom: 8vh; justify-content: center; font-size: 1.1em; }
 .ly :focus-visible { outline-color: currentColor; }
 
-@media (max-width: 760px) {
+@media (max-width: 760px) and (orientation: portrait) {
   .bar { flex-wrap: wrap; gap: 0 8px; padding: 10px 18px; }
   .bar nav { order: 3; width: 100%; gap: 22px; }
   .controls { gap: 5px; }
   .in { grid-template: minmax(0, 1fr) auto auto / minmax(0, 1fr); padding: 100px 18px 3vh; }
   .sc { grid-area: 1 / 1; }
-  .tx { grid-area: 2 / 1; padding: 0; }
+  .tx { grid-area: 2 / 1; padding: 0; font-size: 16px; line-height: 1.42; }
   .ly h2 { grid-area: 3 / 1; }
-  .hero h1 { top: 42%; font-size: 40vw; }
-  .me .lead { top: max(14vh, 108px); right: 18px; }
-  .me .skills { top: auto; bottom: 27vh; left: 18px; right: 18px; width: auto; font-size: 16px; }
-  .end h2 { font-size: 24vw; }
+  .hero h1 { top: 44%; }
+  .me { padding-top: 104px; gap: 18px; }
+  .facts { grid-template-columns: minmax(0, 1fr); gap: 12px; font-size: clamp(14px, 2.2vh, 17px); line-height: 1.42; }
+  .end h2 { top: 42%; }
   .end .links { flex-direction: column; align-items: center; gap: 2px; bottom: 8vh; }
 }
-@media (max-height: 480px) and (min-width: 761px), (max-height: 420px) {
-  .in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1vh 5vw; padding: 62px 24px 2vh; font-size: 14px; line-height: 1.4; }
+/* Phones held sideways */
+@media (max-height: 480px) and (orientation: landscape) {
+  .bar { gap: 20px; padding: 8px 24px; }
+  .bar nav { gap: 20px; }
+  .hero h1 { top: 48%; font-size: 54vh; }
+  .end h2 { font-size: 50vh; }
+  .in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1vh 5vw; padding: 60px 24px 2vh; font-size: 14px; line-height: 1.35; }
   .tx { padding: 0; }
-  .ly h2 { font-size: min(24vw, 25vh); }
-  .me .lead { top: 68px; }
-  .me .skills { top: 70px; font-size: 14px; }
+  .ly h2 { font-size: 25vh; }
+  .tx p { margin-bottom: 0.3em; }
+  .tx .links a { padding: 4px 0; }
+  .me { padding-top: 62px; gap: 8px; }
+  .lead { font-size: 24px; max-width: none; }
+  .facts { font-size: 14px; line-height: 1.35; }
 }
 </style>

@@ -4,15 +4,17 @@
   --w1: #ff7a2f; --k1: #2b0f00; --h1: #fff3e6;
   --w2: #9cc0ff; --k2: #0d2350; --h2: #ffffff;
   --w3: #93dfc3; --k3: #06332b; --h3: #ffffff;
-  --wm: #ffd873;
+  --w4: #ffd04a; --k4: #3a2600; --h4: #ffffff;
+  --wm: #ffab3d;
   color-scheme: light;
 }
+/* At night the water keeps its colour and lights up the page */
 :root[data-theme="dark"] {
-  --paper: #17110e; --ink: #ffeedd;
-  --w1: #b3470a; --k1: #fff0e4; --h1: #ffb27d;
-  --w2: #23427f; --k2: #dde9ff; --h2: #9cc0ff;
-  --w3: #15604f; --k3: #d6fff2; --h3: #93dfc3;
-  --wm: #a8832a;
+  --paper: #120d0b; --ink: #fff1e2;
+  --w1: #ff6a1a; --k1: #200a00; --h1: #fff3e6;
+  --w2: #7fa8ff; --k2: #061536; --h2: #ffffff;
+  --w3: #5fdcb0; --k3: #02261f; --h3: #ffffff;
+  --w4: #ffc531; --k4: #2c1c00; --h4: #ffffff;
   color-scheme: dark;
 }
 
