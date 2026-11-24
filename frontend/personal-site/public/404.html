@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // GitHub Pages serves this for any unknown path (e.g. a reload on /personal-site/about).
+      // GitHub Pages serves this for any unknown path (e.g. a reload on /about).
       // Stash the URL and send the browser to the app root; index.html restores it.
-      // The root must include the repo base path, not '/', or it lands on chucla0.github.io.
       sessionStorage.redirect = location.href;
-      location.replace('/personal-site/');
+      location.replace('/');
     </script>
   </head>
   <body>
-    <p>If you are not redirected automatically, follow this <a href="/personal-site/">link to the main page</a>.</p>
+    <p>If you are not redirected automatically, follow this <a href="/">link to the main page</a>.</p>
   </body>
 </html>
