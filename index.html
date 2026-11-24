@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/personal-site/favicon.ico">
+    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Izan de la Cruz | Desarrollador Full Stack Junior</title>
@@ -10,12 +10,12 @@
     <meta name="description" content="Portafolio de Izan de la Cruz, desarrollador Full Stack Junior graduado en DAM y DAW. Proyectos web con Vue, React y Node.js.">
 
     <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://chucla0.github.io/personal-site/">
+    <meta property="og:url" content="https://izandelacruz.dev.ar/">
     <meta property="og:title" content="Izan de la Cruz | Desarrollador Full Stack Junior">
 
     <meta property="og:description" content="Portafolio de Izan de la Cruz: proyectos, habilidades y contacto.">
 
-    <meta property="og:image" content="https://chucla0.github.io/personal-site/profile.png">
+    <meta property="og:image" content="https://izandelacruz.dev.ar/profile.png">
 
     <meta name="twitter:card" content="summary">
     
@@ -29,16 +29,21 @@
       })();
     </script>
     
-    <!-- IDE Theme Fonts -->
+    <script>
+      // Set the theme before the first paint
+      (function() {
+        let theme = null;
+        try { theme = localStorage.getItem('theme'); } catch (e) { /* storage blocked */ }
+        if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icon Libraries -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script type="module" crossorigin src="/personal-site/assets/index-DQUpIEwY.js"></script>
-    <link rel="stylesheet" crossorigin href="/personal-site/assets/index-CkL2Iz1-.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@500;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-C5KIN9k2.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DZYEfy_P.css">
   </head>
   <body>
     <div id="app"></div>
