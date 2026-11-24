@@ -1,20 +1,17 @@
 /* Page, then one water colour (w), text (k) and highlight (h) per project */
 :root {
   --paper: #fff6ec; --ink: #2e1a10;
-  --w1: #ff7a2f; --k1: #2b0f00; --h1: #fff3e6;
-  --w2: #9cc0ff; --k2: #0d2350; --h2: #ffffff;
-  --w3: #93dfc3; --k3: #06332b; --h3: #ffffff;
-  --w4: #ffd04a; --k4: #3a2600; --h4: #ffffff;
-  --wm: #ffab3d;
+  --w1: #ff6a13; --k1: #1f0a00; --h1: #fff3e6;
+  --w2: #17110e; --k2: #fff1e3; --h2: #ff6a13;
+  --w3: #ffb27d; --k3: #2b1204; --h3: #ffffff;
+  --w4: #ff4a1c; --k4: #1f0500; --h4: #ffe9dc;
+  --wm: #ff8a3c;
   color-scheme: light;
 }
-/* At night the water keeps its colour and lights up the page */
+/* At night the fire stays lit and the black tide turns cream */
 :root[data-theme="dark"] {
   --paper: #120d0b; --ink: #fff1e2;
-  --w1: #ff6a1a; --k1: #200a00; --h1: #fff3e6;
-  --w2: #7fa8ff; --k2: #061536; --h2: #ffffff;
-  --w3: #5fdcb0; --k3: #02261f; --h3: #ffffff;
-  --w4: #ffc531; --k4: #2c1c00; --h4: #ffffff;
+  --w2: #fff1e3; --k2: #17110e;
   color-scheme: dark;
 }
 
