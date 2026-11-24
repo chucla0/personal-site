@@ -30,7 +30,13 @@
               </div>
             </div>
             <div class="file-actions">
-              <a :href="project.codeLink" target="_blank" rel="noopener" class="action-link">
+              <a
+                v-if="project.codeLink"
+                :href="project.codeLink"
+                target="_blank"
+                rel="noopener"
+                class="action-link"
+              >
                 <Code :size="16" /> {{ $t("projects.view_code") }}
               </a>
               <a
@@ -54,6 +60,14 @@
 import { Code, Rocket } from "lucide-vue-next";
 
 const projects = [
+  {
+    id: "casulab",
+    type: ".vue",
+    titleKey: "projects.casulab_name",
+    descKey: "projects.casulab_desc",
+    tags: ["Vue.js"],
+    demoLink: "https://casulab.com/",
+  },
   {
     id: "synapse",
     type: ".jsx",

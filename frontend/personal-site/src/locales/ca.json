@@ -31,6 +31,8 @@
     "subtitle": "Aquí hi ha alguns dels projectes en els quals he treballat",
     "view_code": "Veure Codi",
     "view_demo": "Veure Demo",
+    "casulab_name": "Grupo Casulab",
+    "casulab_desc": "Web corporativa per a una empresa d'equipament científic de Terrassa, desenvolupada en equip amb un company durant les meves pràctiques.",
     "synapse_name": "Synapse",
     "synapse_desc": "Agenda col·laborativa amb diversos tipus de calendari (feina, educació, personal i compartit), rols i fluxos d'aprovació, amb notificacions en temps real. Projecte personal en desenvolupament: fes servir només dades de prova. La primera càrrega pot trigar fins a un minut.",
     "optica_name": "Óptica Santa Isabel",
