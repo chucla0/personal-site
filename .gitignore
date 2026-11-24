@@ -1,3 +1,5 @@
+# Dependencies
+node_modules/
 
 # graphify knowledge-graph output (local analysis)
 graphify-out/
