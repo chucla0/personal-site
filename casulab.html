@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Grupo Casulab | Izan de la Cruz</title>
+
+    <meta name="description" content="Renovación de la web de una empresa de equipamiento científico de Terrassa, en equipo con un compañero durante mis prácticas. Me ocupé sobre todo del diseño.">
+    <link rel="canonical" href="https://izandelacruz.dev.ar/casulab">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://izandelacruz.dev.ar/casulab">
+    <meta property="og:title" content="Grupo Casulab | Izan de la Cruz">
+
+    <meta property="og:description" content="Renovación de la web de una empresa de equipamiento científico de Terrassa, en equipo con un compañero durante mis prácticas. Me ocupé sobre todo del diseño.">
+
+    <meta property="og:image" content="https://izandelacruz.dev.ar/share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="La palabra izan sobre una ola naranja">
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script>
+      (function() {
+        const redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    
+    <script>
+      // Set the theme before the first paint
+      (function() {
+        let theme = null;
+        try { theme = localStorage.getItem('theme'); } catch (e) { /* storage blocked */ }
+        if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
+    <script>
+      // "/" ships a readable version for visitors without scripts; the landing replaces it
+      if (!location.pathname.startsWith('/resumen')) document.documentElement.classList.add('app');
+    </script>
+    <style>.app #app > .overview { visibility: hidden; }</style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@500;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-ds-4YcE7.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-rR6Y82DP.css">
+  </head>
+  <body>
+    <div id="app"><div class="project" style="--w:var(--w1);--k:var(--k1);" data-v-a65dc039><header class="page-bar" data-v-a65dc039 data-v-434b7e84><a href="/" class="" data-v-434b7e84>Izan de la Cruz</a><a href="/resumen" class="" data-v-434b7e84>Resumen</a><div class="controls" data-v-434b7e84><button class="pill" aria-label="Cambiar idioma" data-v-434b7e84>ES</button><button class="pill" aria-label="Cambiar tema claro/oscuro" data-v-434b7e84>Noche</button></div></header><main data-v-a65dc039><h1 class="big" data-v-a65dc039>casulab</h1><p class="lead" data-v-a65dc039>Renovación de la web de una empresa de equipamiento científico de Terrassa, en equipo con un compañero durante mis prácticas. Me ocupé sobre todo del diseño.</p><div class="links" data-v-a65dc039><a href="https://casulab.com/" target="_blank" rel="noopener" data-v-a65dc039>Abrir la web</a><!----></div><figure data-v-a65dc039><img src="/shots/casulab.webp" width="1280" height="800" alt="Captura de Grupo Casulab" data-v-a65dc039><!----></figure><dl data-v-a65dc039><!--[--><div data-v-a65dc039><dt data-v-a65dc039>Qué es</dt><dd data-v-a65dc039>La renovación de la web corporativa de una empresa de equipamiento científico de Terrassa. Reúne sus tres divisiones, Enterlab, Rephile y Casulab, con sus servicios y formas de contacto.</dd></div><div data-v-a65dc039><dt data-v-a65dc039>Qué hice yo</dt><dd data-v-a65dc039>Principalmente el diseño. La hicimos en equipo, un compañero y yo, durante mis prácticas.</dd></div><div data-v-a65dc039><dt data-v-a65dc039>Un reto</dt><dd data-v-a65dc039>La empresa ya tenía web y había que renovarla. Lo que más me costó fue encontrar un diseño que al cliente le pareciera correcto.</dd></div><!--]--><div data-v-a65dc039><dt data-v-a65dc039>Tecnologías</dt><dd data-v-a65dc039>Vue.js</dd></div></dl><!----></main><footer data-v-a65dc039><a href="/synapse" class="next" data-v-a65dc039>Siguiente <span class="big" data-v-a65dc039>synapse</span></a><a href="/#contact" class="" data-v-a65dc039>Contacto</a></footer></div></div>
+  </body>
+</html>

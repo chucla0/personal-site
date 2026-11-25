@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Codex | Izan de la Cruz</title>
+
+    <meta name="description" content="Red social para estudiantes, con publicaciones, mensajes en tiempo real, videollamadas y espacios por centro. Mi proyecto final de DAW, hecho en un equipo de cuatro.">
+    <link rel="canonical" href="https://izandelacruz.dev.ar/codex">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://izandelacruz.dev.ar/codex">
+    <meta property="og:title" content="Codex | Izan de la Cruz">
+
+    <meta property="og:description" content="Red social para estudiantes, con publicaciones, mensajes en tiempo real, videollamadas y espacios por centro. Mi proyecto final de DAW, hecho en un equipo de cuatro.">
+
+    <meta property="og:image" content="https://izandelacruz.dev.ar/share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="La palabra izan sobre una ola naranja">
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script>
+      (function() {
+        const redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    
+    <script>
+      // Set the theme before the first paint
+      (function() {
+        let theme = null;
+        try { theme = localStorage.getItem('theme'); } catch (e) { /* storage blocked */ }
+        if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
+    <script>
+      // "/" ships a readable version for visitors without scripts; the landing replaces it
+      if (!location.pathname.startsWith('/resumen')) document.documentElement.classList.add('app');
+    </script>
+    <style>.app #app > .overview { visibility: hidden; }</style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@500;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-ds-4YcE7.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-rR6Y82DP.css">
+  </head>
+  <body>
+    <div id="app"><div class="project" style="--w:var(--w4);--k:var(--k4);" data-v-a65dc039><header class="page-bar" data-v-a65dc039 data-v-434b7e84><a href="/" class="" data-v-434b7e84>Izan de la Cruz</a><a href="/resumen" class="" data-v-434b7e84>Resumen</a><div class="controls" data-v-434b7e84><button class="pill" aria-label="Cambiar idioma" data-v-434b7e84>ES</button><button class="pill" aria-label="Cambiar tema claro/oscuro" data-v-434b7e84>Noche</button></div></header><main data-v-a65dc039><h1 class="big" data-v-a65dc039>codex</h1><p class="lead" data-v-a65dc039>Red social para estudiantes, con publicaciones, mensajes en tiempo real, videollamadas y espacios por centro. Mi proyecto final de DAW, hecho en un equipo de cuatro.</p><div class="links" data-v-a65dc039><!----><a href="https://github.com/chucla0/projecte-final-2025-26-daw-codex_trfinal_grup4" target="_blank" rel="noopener" data-v-a65dc039>Leer el código</a></div><figure data-v-a65dc039><img src="/shots/codex.webp" width="1280" height="800" alt="Captura de Codex" data-v-a65dc039><figcaption data-v-a65dc039>Interfaz real con datos de ejemplo.</figcaption></figure><dl data-v-a65dc039><!--[--><div data-v-a65dc039><dt data-v-a65dc039>Qué es</dt><dd data-v-a65dc039>Una red social para estudiantes: publicar dudas con código, seguir a gente, hablar en tiempo real y tener un espacio privado para cada centro. Fue mi proyecto final de DAW.</dd></div><div data-v-a65dc039><dt data-v-a65dc039>Qué hice yo</dt><dd data-v-a65dc039>En un equipo de cuatro, hice la mayor parte de la API en Laravel (publicaciones, acceso con Google, búsqueda, centros y notificaciones) y el despliegue con Docker y GitHub Actions. También trabajé en la interfaz.</dd></div><div data-v-a65dc039><dt data-v-a65dc039>Un reto</dt><dd data-v-a65dc039>Que las notificaciones lleguen al momento. La API en Laravel las publica en Redis y un servidor de Socket.io, aparte, las reparte a cada usuario conectado.</dd></div><div data-v-a65dc039><dt data-v-a65dc039>Estado</dt><dd data-v-a65dc039>El código es público. La versión en línea está en preparación.</dd></div><!--]--><div data-v-a65dc039><dt data-v-a65dc039>Tecnologías</dt><dd data-v-a65dc039>React, Laravel, Socket.io, WebRTC, Redis, Docker</dd></div></dl><figure data-v-a65dc039><img src="/shots/codex-2.webp" width="1280" height="800" loading="lazy" alt="Captura de Codex" data-v-a65dc039></figure></main><footer data-v-a65dc039><a href="/casulab" class="next" data-v-a65dc039>Siguiente <span class="big" data-v-a65dc039>casulab</span></a><a href="/#contact" class="" data-v-a65dc039>Contacto</a></footer></div></div>
+  </body>
+</html>
